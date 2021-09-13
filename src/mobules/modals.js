@@ -14,18 +14,19 @@ const modals = () => {
   };
 
   document.addEventListener('click', event => {
-    event.preventDefault();
     const target = event.target;
 
     //callModal
     if (target.closest('.header-modal__close') ||
         target.closest('.button')) {
+      event.preventDefault();
       callModal();
     }
 
     //measurementModal
     if (target.closest('.services-modal__close') ||
         target.closest('.service-button')) {
+      event.preventDefault();
       measurementModal();
     }
 

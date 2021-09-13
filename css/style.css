@@ -15,6 +15,11 @@ h2 span {
 h3 {
   text-transform: uppercase;
 }
+
+.active-menu {
+  display: block !important;
+}
+
 .text-normal {
   font-family: "NeoSansCyr-Medium", sans-serif !important;
 }
@@ -222,7 +227,7 @@ input.error {
   text-decoration: none;
 }
 .button {
-  padding-top: 27px;
+  margin-top: 27px;
 }
 .navbar-order {
   float: right;
@@ -849,8 +854,7 @@ p.services-image_mobile {
   position: absolute;
   height: 100px;
 }
-.footer-copyright {
-}
+
 .footer-copyright span {
   color: #ffb135;
 }
@@ -1593,7 +1597,6 @@ input.error {
 .benefits-wrap {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
 }
 
 .benefits__item {
@@ -1665,16 +1668,16 @@ input.error {
   transform: rotate(90deg);
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
     max-width: 576px;
-  }
+  } */
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .benefits-wrap {
     width: 100%;
     max-width: 576px;
-  }
+  } */
 }

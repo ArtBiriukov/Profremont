@@ -20,6 +20,19 @@ h3 {
   display: block !important;
 }
 
+.message-calc {
+    width: 300px;
+    color: white;
+    font-family: sans-serif;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 30px;
+    top: calc(100vh + 20px);
+    transition-duration: 0.5s;
+}
+
 .text-normal {
   font-family: "NeoSansCyr-Medium", sans-serif !important;
 }

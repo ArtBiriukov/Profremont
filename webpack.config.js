@@ -3,20 +3,6 @@ const path = require('path');
 module.exports = {
   watch: true,
   entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'bundel'),
-  },
-
-  devServer: {
-    static: {
-      directory: path.join(__dirname, ''),
-    },
-    open: true,
-    compress: true,
-    hot: true,
-    port: 9000,
-  },
 
   module: {
     rules: [
@@ -31,5 +17,19 @@ module.exports = {
         }
       }
     ]
-  }
-}
+  },
+
+  devServer: {
+    static: ['./', './src'],
+    liveReload: true,
+    hot: true,
+    open: true,
+    port: 9000,
+  },
+
+  output: {
+    path: path.resolve(__dirname, 'bundel'),
+    publicPath: '/bundel/',
+    filename: 'main.js'
+  },
+};

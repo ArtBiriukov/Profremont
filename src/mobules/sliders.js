@@ -9,7 +9,7 @@ const sliders = () => {
       position = 0,
       slidersToShow = 3,
       infinity = true,
-      responsive = [],
+      responsive = []
     }) {
       //контент
       this.main = document.querySelector(main);
@@ -31,7 +31,6 @@ const sliders = () => {
         maxPosition: this.slides.length - this.slidersToShow
       };
       this.responsive = responsive;
-
     }
 
     init() {
@@ -42,12 +41,9 @@ const sliders = () => {
       if (this.responsive) {
         this.responseInit();
       }
-
     }
 
     addClass() {
-      this.main.classList.add('vi__slider');
-      this.wrap.classList.add('vi__slider-wrap');
       for (const item of this.slides) {
         item.classList.add('vi__slider-item');
       }
@@ -130,7 +126,7 @@ const sliders = () => {
 
   }
 
-  const sliderBenefit = {
+  const sliderBenefitConfig = {
     main: '.benefits-inner',
     wrap: '.benefits-wrap',
     nextBtn: '.benefits__arrow--right',
@@ -149,10 +145,9 @@ const sliders = () => {
     }]
   };
 
-  const slider = new SliderCarusel(sliderBenefit);
-  slider.init();
+  const sliderBenefit = new SliderCarusel(sliderBenefitConfig);
+  sliderBenefit.init();
 
 };
 
 export default sliders;
-

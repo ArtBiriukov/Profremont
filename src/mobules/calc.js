@@ -11,7 +11,11 @@ const calc = () => {
     calcSquare.value = calcSquare.value.replace(/[а-яёa-z]/gi, '');
   };
 
-  calcSquare.addEventListener('input', checkValue);
+  if (!calcSquare) {
+    return;
+  } else {
+    calcSquare.addEventListener('input', checkValue);
+  }
 
   //сам калькулятор
   calc.addEventListener('change', event => {
@@ -34,10 +38,19 @@ const calc = () => {
       //выподающие сообщение
       const hightMes = calcMessage.clientHeight;
 
-      if (typeValue === '--' && target === calcSquare) {
+      const showMessag = () => {
         calcMessage.style.top = `calc(100vh - ${30 + hightMes}px)`;
-      } else {
+      };
+
+      const leaveMessag = () => {
         calcMessage.style.top = `calc(100vh + 30px)`;
+      };
+
+      if (typeValue === '--' && target === calcSquare) {
+        showMessag();
+        setInterval(leaveMessag, 2500);
+      } else {
+        leaveMessag();
       }
 
       //если поле площадь заполнена и выбран тип тогда считаем
@@ -82,7 +95,3 @@ const calc = () => {
 };
 
 export default calc;
-
-
-
-//calc-type calc-input calc-type-material calc-total

@@ -517,17 +517,7 @@ input.error {
 #benefits {
   background-color: #f5f6f6;
 }
-.benefits-inner {
-  text-align: center;
-}
-.benefit-image {
-  margin-bottom: 22px;
-}
-.benefit-title {
-  margin: 0;
-  font-size: 18px;
-  text-transform: uppercase;
-}
+
 .bank-img-hover {
   display: none;
 }
@@ -1607,14 +1597,47 @@ input.error {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
+/* benefit */
+
+
+.benefit-image {
+  margin-bottom: 22px;
+}
+.benefit-title {
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 577px) {
+  .benefits-inner {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .benefits-inner {
+    max-width: 554px;
+  }
+}
+
+.benefits-inner {
+  width: auto;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
 .benefits-wrap {
+  width: auto; 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+  transition: 0.5s ease; 
 }
 
 .benefits__item {
-  width: 100%;
-  max-width: 185px;
+  text-align: center;
 }
 
 .benefits-arrows {

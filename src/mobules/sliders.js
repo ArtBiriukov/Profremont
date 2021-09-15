@@ -1,3 +1,4 @@
+const sliders = () => {
   class SliderCarusel {
     constructor({
       main,

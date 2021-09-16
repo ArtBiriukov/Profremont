@@ -6,21 +6,23 @@ const modals = () => {
     contentPhoto = photoModal.querySelector('.modal-content'),
     scrollBtn = document.querySelector('.smooth-scroll');
 
-  const callModal = () => {
+  const overlayAndScrollToggle = () => {
     overlay.classList.toggle('active-menu');
-    headerModal.classList.toggle('active-menu');
     scrollBtn.classList.toggle('active-zindex');
+  };
+
+  const callModal = () => {
+    overlayAndScrollToggle();
+    headerModal.classList.toggle('active-menu');
   };
 
   const measurementModal = () => {
-    overlay.classList.toggle('active-menu');
+    overlayAndScrollToggle();
     servicesModal.classList.toggle('active-menu');
-    scrollBtn.classList.toggle('active-zindex');
   };
 
   const photosModal = () => {
-    overlay.classList.toggle('active-menu');
-    scrollBtn.classList.toggle('active-zindex');
+    overlayAndScrollToggle();
     photoModal.classList.toggle('active-menu');
   };
 
@@ -62,9 +64,8 @@ const modals = () => {
       }
     }
 
-    if (target.classList.contains('overlay') ||
-    target.classList.contains('close__photo') ||
-    target.classList.contains('photo-modal')) {
+    if (target.classList.contains('close__photo') ||
+    target.classList.contains('active-menu')) {
       photosModal();
     }
   });

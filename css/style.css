@@ -72,6 +72,13 @@ h3 {
   cursor: pointer;
 }
 
+.fancybox-skin {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
 .modal-content {    
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;

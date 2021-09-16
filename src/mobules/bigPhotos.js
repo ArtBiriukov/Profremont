@@ -5,7 +5,6 @@ const bigPhoto = () => {
     contentPhoto = photoModal.querySelector('.modal-content');
 
   const callModal = () => {
-
     overlay.classList.toggle('active-menu');
     scrollBtn.classList.toggle('active-zindex');
     photoModal.classList.toggle('active-menu');

@@ -671,6 +671,7 @@
         </div>
       </div>
     </div>
+
     <div id="reviews" class="section">
       <div class="container">
         <div class="section-title">
@@ -776,6 +777,7 @@
         </div>
       </div>
     </div>
+
     <div id="about" class="section">
       <div class="container">
         <div class="section-title">
@@ -848,6 +850,7 @@
         </div>
       </div>
     </div>
+
     <div id="documents" class="section">
     	<div class="container">
     		<div class="section-title">
@@ -876,6 +879,7 @@
     		</div>
     	</div>
     </div>
+
     <div id="order_2" class="order">
       <div class="container">
         <div class="col-md-offset-2 col-md-8">
@@ -953,6 +957,7 @@
         </div>
       </div>
     </div>
+    
     <div id="contacts" class="section">
       <div class="container">
         <div class="section-title">
@@ -1220,28 +1225,40 @@
 	<div class="header-modal header-modal--opened">
 		<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
 			<div class="fancybox-outer">
+
 				<div class="fancybox-inner" style="overflow: hidden; width: 580px; height: 495px;">
+
 					<div id="callback" class="order-call-modal box-modal" style="display: block;">
-        <div class="box-modal_title">
-            <div class="box-modal_topic text-center text-warning" style="margin-left: 0px;">Заказ звонка</div>
+
+            <div class="box-modal_title">
+                <div class="box-modal_topic text-center text-warning" style="margin-left: 0px;">Заказ звонка</div>
+            </div>
+
+            <div class="box-modal_body rf">
+                <p class="text-center">Оставьте, пожалуйста, заявку. Мы позвоним Вам в ближайшее время и ответим на все вопросы!</p>
+                <form name="callback-form">
+                    <div class="form-group">
+                        <input type="text" name="fio" class="form-control required" placeholder="Ваше имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control required" placeholder="Контактный телефон*" data-mask="+7 (999) 999-99-99">
+                    </div>
+                    <div class="form-action">
+                        <div class="text-center"><button type="submit" class="btn btn-warning feedback">Свяжитесь со мной!</button></div>
+                    </div>
+                    <input type="hidden" name="page" value="Окна">
+                </form>
+                <span class="help-block">Гарантируем 100% конфиденциальность. Ваша информация не будет распространяться.</span>
+            </div>
+
+          </div>
+
         </div>
-        <div class="box-modal_body rf">
-            <p class="text-center">Оставьте, пожалуйста, заявку. Мы позвоним Вам в ближайшее время и ответим на все вопросы!</p>
-            <form name="callback-form">
-                <div class="form-group">
-                    <input type="text" name="fio" class="form-control required" placeholder="Ваше имя*">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="phone" class="form-control required" placeholder="Контактный телефон*" data-mask="+7 (999) 999-99-99">
-                </div>
-                <div class="form-action">
-                    <div class="text-center"><button type="submit" class="btn btn-warning feedback">Свяжитесь со мной!</button></div>
-                </div>
-                <input type="hidden" name="page" value="Окна">
-            </form>
-            <span class="help-block">Гарантируем 100% конфиденциальность. Ваша информация не будет распространяться.</span>
-        </div>
-    </div></div></div><span title="Close" class="header-modal__close">x</span></div></div>
+
+      </div>
+      <span title="Close" class="header-modal__close">x</span>
+    </div>
+  </div>
 
 	<div class="services-modal services-modal--opened">
 			<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
@@ -1276,6 +1293,7 @@
 		<span class="close__photo">&#10005</span>
     <img class="modal-content" alt="photo">
 	</div>
+
 	<div class="smooth-scroll">
 		<img class="smooth-scroll__img" src="./images/prev_arrow.png" alt="smooth">
 	</div>

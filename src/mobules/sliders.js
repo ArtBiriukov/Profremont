@@ -8,7 +8,8 @@ const sliders = () => {
       position = 0,
       slidersToShow = 3,
       infinity = true,
-      responsive = []
+      responsive = [],
+      sliderWidthValid = false,
     }) {
       //контент
       this.main = document.querySelector(main);
@@ -21,7 +22,7 @@ const sliders = () => {
       this.prevBtn = document.querySelector(prevBtn);
       //количество слайдов
       this.slidersToShow = slidersToShow;
-
+      this.sliderWidthValid = sliderWidthValid;
       //опции
       this.options = {
         position,
@@ -33,8 +34,14 @@ const sliders = () => {
     }
 
     init() {
-      this.addClass();
-      this.addStyle();
+
+      console.log(this.sliderWidthValid);
+
+      if (this.sliderWidthValid) {
+        this.addClass();
+        this.addStyle();
+      }
+
       this.controlSlider();
 
       if (this.responsive) {
@@ -57,7 +64,7 @@ const sliders = () => {
       }
 
       style.textContent = `
-        .vi__slider-item {         
+        .vi__slider-item {
           min-width: ${this.options.sliderWidth}px;
         }
       `;
@@ -133,18 +140,34 @@ const sliders = () => {
 
     slidersToShow: 3,
     infinity: true,
+    sliderWidthValid: true,
 
-    responsive: [{
-      breakpoint: 1024,
-      slidersToShow: 3
-    },
-    {
-      breakpoint: 576,
-      slidersToShow: 1
-    }]
+    responsive: [
+      {
+        breakpoint: 576,
+        slidersToShow: 1
+      }]
+  };
+
+  const sliderServiceConfig = {
+    main: '.service__content',
+    wrap: '.service-wrap',
+    nextBtn: '.services__arrow--right',
+    prevBtn: '.services__arrow--left',
+
+    slidersToShow: 2,
+    infinity: true,
+
+    responsive: [
+      {
+        breakpoint: 768,
+        slidersToShow: 1
+      }]
   };
 
   const sliderBenefit = new SliderCarusel(sliderBenefitConfig);
+  const sliderService = new SliderCarusel(sliderServiceConfig);
+  sliderService.init();
   sliderBenefit.init();
 
 };

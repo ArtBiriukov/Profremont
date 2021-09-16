@@ -1,24 +1,13 @@
 const bigPhoto = () => {
-  const section = document.getElementById('documents'),
-    overlay = document.querySelector('.overlay'),
+  const overlay = document.querySelector('.overlay'),
     scrollBtn = document.querySelector('.smooth-scroll'),
-    photoModal = document.createElement('div');
+    photoModal = document.querySelector('.photo-modal'),
+    contentPhoto = photoModal.querySelector('.modal-content');
 
   const callModal = () => {
     overlay.classList.toggle('active-menu');
     scrollBtn.classList.toggle('active-zindex');
     photoModal.classList.toggle('active-menu');
-  };
-
-  const creatPhotoModal = photoUrl => {
-    photoModal.classList.add('photo-modal');
-
-    photoModal.innerHTML = `      
-    <span class="close__photo">&#10005</span>
-    <img class="modal-content" src="${photoUrl}" alt="photo">
-    `;
-
-    section.appendChild(photoModal);
   };
 
   document.addEventListener('click', event => {
@@ -30,7 +19,7 @@ const bigPhoto = () => {
     if (target.closest('.document-overlay')) {
       const bigPhoto = target.closest('.sertificate-document').href;
 
-      creatPhotoModal(bigPhoto);
+      contentPhoto.src = `${bigPhoto}`;
       callModal();
     }
 
@@ -41,7 +30,6 @@ const bigPhoto = () => {
       callModal();
     }
   });
-
 };
 
 export default bigPhoto;

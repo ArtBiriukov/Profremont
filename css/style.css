@@ -37,12 +37,6 @@ h3 {
     transition-duration: 0.5s;
 }
 
-
-
-
-
-
-
 .photo-modal {
   display: none;
   position: fixed;
@@ -50,7 +44,7 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 75%;
 }
 
 .modal-content {

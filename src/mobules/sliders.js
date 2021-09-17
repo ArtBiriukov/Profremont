@@ -35,8 +35,6 @@ const sliders = () => {
 
     init() {
 
-      console.log(this.sliderWidthValid);
-
       if (this.sliderWidthValid) {
         this.addClass();
         this.addStyle();

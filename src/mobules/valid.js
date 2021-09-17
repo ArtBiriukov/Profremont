@@ -34,6 +34,7 @@ const valid = () => {
 
   //отчистка input
   const clearInputs = inputs => {
+
     inputs.forEach(item => {
       item.value = '';
       item.classList.remove('success');
@@ -42,19 +43,16 @@ const valid = () => {
   };
 
   //убирать сообшение
-  // const closeMessage = () => {
-  //   const popup = document.querySelector('.popup');
-  //   popup.style.display = 'none';
-  //   statusMessage.remove();
-  // };
+  const closeMessage = () => {
+    const popup = document.querySelector('.popup');
+    popup.style.display = 'none';
+    statusMessage.remove();
+  };
 
   //работа по формам
   const workForm = formName => {
     const form = document.querySelector(`form[name="${formName}"]`),
       inputsForm = form.querySelectorAll('.form-group input');
-
-    console.log(form);
-
 
     //работа с инпутами ВАЛИДАЦИЯ
     inputsForm.forEach(input => {
@@ -68,76 +66,83 @@ const valid = () => {
 
     maskPhone('input[name="phone"]');
 
+    // const loadMessage = () => {
+    //   console.log('из функции лойд мессадж');
+    // };
+
     //Отправка данных на сервер
     form.addEventListener('submit', event => {
       event.preventDefault();
 
       const target = event.target;
-      // targetInput = target.querySelectorAll('input');
 
+      const targetInput = target.querySelectorAll('input');
 
-      // const checkInputs = () => {
-      //   let result = true;
+      const checkInputs = () => {
+        let result = true;
 
-      //   targetInput.forEach(item => {
+        targetInput.forEach(item => {
 
-      //     if (item.value === '') {
-      //       result = false;
-      //       return;
-      //     }
+          if (item.value === '') {
+            item.classList.add('error');
+            result = false;
+            return;
+          }
 
-      //     if (item.classList.contains('error')) {
-      //       result = false;
-      //       return;
-      //     }
+          if (item.classList.contains('error')) {
+            result = false;
+            return;
+          }
 
-      //   });
-      //   return result;
-      // };
+        });
+        return result;
+      };
 
-      // if (checkInputs()) {
+      if (checkInputs()) {
 
-      //   target.appendChild(statusMessage);
+        target.appendChild(statusMessage);
 
-      //   statusMessage.classList.add('animate__backInRight');
-      //   statusMessage.textContent = loadMessage;
+        statusMessage.classList.add('animate__backInRight');
+        statusMessage.textContent = loadMessage;
 
-      //   const formData = new FormData(target);
-      //   const body = {};
+        // loadMessage();
 
-      //   formData.forEach((item, key) => {
-      //     body[key] = item;
-      //   });
+        const formData = new FormData(target);
+        const body = {};
 
-      //   //Если все гуд
-      //   const successResolve = () => {
-      //     statusMessage.style.display = 'block';
-      //     statusMessage.textContent = successMessage;
-      //     clearInputs(targetInput);
-      //     setTimeout(closeMessage, 3000);
-      //   };
+        formData.forEach((item, key) => {
+          body[key] = item;
+        });
 
-      //   //Если ошибка
-      //   const errorResolve = () => {
-      //     statusMessage.style.display = 'block';
-      //     successMessage.textContent = errorMessage;
-      //     clearInputs(targetInput);
-      //     setTimeout(closeMessage, 3000);
-      //   };
+        //Если все гуд
+        const successResolve = () => {
+          statusMessage.style.display = 'block';
+          statusMessage.textContent = successMessage;
+          clearInputs(targetInput);
+          setTimeout(closeMessage, 3000);
+        };
 
-      //   postData(body)
-      //     .then(response => {
-      //       if (response.status !== 200) {
-      //         throw new Error('status not 200');
-      //       }
-      //       successResolve();
-      //     })
-      //     .catch(error => {
-      //       errorResolve();
-      //       console.log(error);
-      //     });
+        //Если ошибка
+        const errorResolve = () => {
+          statusMessage.style.display = 'block';
+          statusMessage.textContent = errorMessage;
+          clearInputs(targetInput);
+          setTimeout(closeMessage, 3000);
+        };
 
-      // }
+        postData(body)
+          .then(response => {
+            if (response.status !== 200) {
+              throw new Error('status not 200');
+            }
+            successResolve();
+          })
+          .catch(error => {
+            errorResolve();
+            console.log(error);
+          });
+
+      }
     });
   };
 

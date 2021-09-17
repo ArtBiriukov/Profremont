@@ -2,6 +2,8 @@ import checkInputs from "./checkInputs";
 import rebildInputs from "./rebildInputs";
 import maskPhone from './mask-phone';
 
+const calcTotal = document.querySelector('input[name="calc-total"]');
+
 const valid = () => {
 
   const errorMessage = 'Что то не то',
@@ -21,9 +23,6 @@ const valid = () => {
     text-align: center;
   `;
 
-  // const nameInputs = document.querySelectorAll('input[name="fio"]'),
-  //   phoneInputs = document.querySelectorAll('input[name="phone"]');
-
   //запрос на сервер
   const postData = body => fetch('./server.php', {
     method: "POST",
@@ -37,13 +36,11 @@ const valid = () => {
   const clearInputs = inputs => {
 
     inputs.forEach(item => {
-      console.log(item);
       if (item.name !== 'page' && item.name !== 'subject') {
         item.value = '';
         item.classList.remove('success');
         item.classList.remove('error');
       }
-
     });
   };
 
@@ -135,6 +132,12 @@ const valid = () => {
         formData.forEach((item, key) => {
           body[key] = item;
         });
+
+        if (calcTotal !== null) {
+          if (calcTotal.value) {
+            body[`${calcTotal.name}`] = calcTotal.value;
+          }
+        }
 
         //Если все гуд
         const successResolve = () => {

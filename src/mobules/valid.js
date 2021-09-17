@@ -9,15 +9,16 @@ const valid = () => {
     successMessage = 'Ваши данные у нас ))';
 
   const statusMessage = document.createElement('div');
-  statusMessage.classList.add('animate__animated');
   statusMessage.style.cssText = `
+    position: relative;
+    color: white;
     font-size: 2rem;
-    background-color: steelblue;
-    width: 230px;
+    background-color: #4b9a22;
     padding: 10px;
-    border: 2px solid burlywood;
-    border-radius: 25px;
+    border: 2px solid #5dd29c;
+    border-radius: 20px;
     margin: 10px auto;
+    text-align: center;
   `;
 
   // const nameInputs = document.querySelectorAll('input[name="fio"]'),
@@ -36,16 +37,38 @@ const valid = () => {
   const clearInputs = inputs => {
 
     inputs.forEach(item => {
-      item.value = '';
-      item.classList.remove('success');
-      item.classList.remove('error');
+      console.log(item);
+      if (item.name !== 'page' && item.name !== 'subject') {
+        item.value = '';
+        item.classList.remove('success');
+        item.classList.remove('error');
+      }
+
     });
   };
 
   //убирать сообшение
-  const closeMessage = () => {
-    const popup = document.querySelector('.popup');
-    popup.style.display = 'none';
+  const closeMessage = targetModal => {
+
+    const headerModal = document.querySelector('.header-modal'),
+      servicesModal = document.querySelector('.services-modal'),
+      overlay = document.querySelector('.overlay'),
+      scrollBtn = document.querySelector('.smooth-scroll');
+
+    if (targetModal.name === 'callback-form') {
+      headerModal.classList.toggle('active-menu');
+      overlay.classList.toggle('active-menu');
+      scrollBtn.classList.toggle('active-zindex');
+      statusMessage.remove();
+    }
+
+    if (targetModal.name === 'application-form') {
+      servicesModal.classList.toggle('active-menu');
+      overlay.classList.toggle('active-menu');
+      scrollBtn.classList.toggle('active-zindex');
+      statusMessage.remove();
+    }
+
     statusMessage.remove();
   };
 
@@ -73,7 +96,6 @@ const valid = () => {
     //Отправка данных на сервер
     form.addEventListener('submit', event => {
       event.preventDefault();
-
       const target = event.target;
 
       const targetInput = target.querySelectorAll('input');
@@ -119,7 +141,7 @@ const valid = () => {
           statusMessage.style.display = 'block';
           statusMessage.textContent = successMessage;
           clearInputs(targetInput);
-          setTimeout(closeMessage, 3000);
+          setTimeout(closeMessage(target), 3000);
         };
 
         //Если ошибка
@@ -127,7 +149,7 @@ const valid = () => {
           statusMessage.style.display = 'block';
           statusMessage.textContent = errorMessage;
           clearInputs(targetInput);
-          setTimeout(closeMessage, 3000);
+          setTimeout(closeMessage(target), 3000);
         };
 
         postData(body)

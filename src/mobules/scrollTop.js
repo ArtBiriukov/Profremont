@@ -2,13 +2,21 @@ const scrollTop = () => {
   const scrollBtn = document.querySelector('.smooth-scroll');
   const benefitsSection = document.querySelector('#benefits');
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const scrolling = () => {
     scrollBtn.addEventListener('click', event => {
+      const eventCount = event.detail;
       event.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      if (eventCount === 1) {
+        scrollTop();
+      }
+      return;
     });
   };
 

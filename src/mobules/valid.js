@@ -45,7 +45,7 @@ const valid = () => {
   };
 
   //убирать сообшение
-  const closeMessage = targetModal => {
+  const closeMessage = (targetModal) => {
 
     const headerModal = document.querySelector('.header-modal'),
       servicesModal = document.querySelector('.services-modal'),
@@ -121,7 +121,6 @@ const valid = () => {
 
         target.appendChild(statusMessage);
 
-        statusMessage.classList.add('animate__backInRight');
         statusMessage.textContent = loadMessage;
 
         // loadMessage();
@@ -144,7 +143,7 @@ const valid = () => {
           statusMessage.style.display = 'block';
           statusMessage.textContent = successMessage;
           clearInputs(targetInput);
-          setTimeout(closeMessage(target), 3000);
+          setTimeout(() => { closeMessage(target); }, 3000);
         };
 
         //Если ошибка
@@ -152,7 +151,7 @@ const valid = () => {
           statusMessage.style.display = 'block';
           statusMessage.textContent = errorMessage;
           clearInputs(targetInput);
-          setTimeout(closeMessage(target), 3000);
+          setTimeout(() => { closeMessage(target); }, 3000);
         };
 
         postData(body)

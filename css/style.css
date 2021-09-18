@@ -2111,3 +2111,31 @@ input.error {
   transform: rotate(90deg);
   transition: opacity .2s ease-in;
 }
+
+/*status message */ 
+
+.status-messag{
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  padding: 10px;
+  border-radius: 10px;
+  filter: drop-shadow(1px 2px 7px black);
+}
+
+.status-messag__succes {
+  background-color: #89ea89;
+}
+
+.status-messag__error {
+  background-color: #f9b5b5;
+}
+
+.status-messag__img {
+  width: 40px;
+}
+
+.status-messag__text {
+  margin-left: 15px;
+}

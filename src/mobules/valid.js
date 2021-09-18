@@ -5,22 +5,16 @@ import maskPhone from './mask-phone';
 const calcTotal = document.querySelector('input[name="calc-total"]');
 
 const valid = () => {
-
-  const errorMessage = 'Что то не то',
-    loadMessage = 'Загрузка ...',
-    successMessage = 'Ваши данные у нас ))';
-
+  //СОЗДАНИЕ СООБЩЕНИЯ
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = `
-    position: relative;
-    color: white;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
     font-size: 2rem;
-    background-color: #4b9a22;
-    padding: 10px;
-    border: 2px solid #5dd29c;
-    border-radius: 20px;
-    margin: 10px auto;
-    text-align: center;
   `;
 
   //запрос на сервер
@@ -45,21 +39,29 @@ const valid = () => {
   };
 
   //убирать сообшение
-  const closeMessage = (targetModal) => {
+  const closeMessage = (targetForm, targetInputs) => {
+    targetForm.style.filter = 'none';
+
+    const targetBtn = targetForm.querySelector('button');
+
+    targetInputs.forEach(input => {
+      input.removeAttribute('disabled');
+    });
+    targetBtn.removeAttribute('disabled');
 
     const headerModal = document.querySelector('.header-modal'),
       servicesModal = document.querySelector('.services-modal'),
       overlay = document.querySelector('.overlay'),
       scrollBtn = document.querySelector('.smooth-scroll');
 
-    if (targetModal.name === 'callback-form') {
+    if (targetForm.name === 'callback-form') {
       headerModal.classList.toggle('active-menu');
       overlay.classList.toggle('active-menu');
       scrollBtn.classList.toggle('active-zindex');
       statusMessage.remove();
     }
 
-    if (targetModal.name === 'application-form') {
+    if (targetForm.name === 'application-form') {
       servicesModal.classList.toggle('active-menu');
       overlay.classList.toggle('active-menu');
       scrollBtn.classList.toggle('active-zindex');
@@ -67,6 +69,94 @@ const valid = () => {
     }
 
     statusMessage.remove();
+  };
+
+  //ЗАГРУЗКА (СПИНЕР)
+  const loadMessage = (formBody, formInputs) => {
+
+    const formBtn = formBody.querySelector('button');
+
+    formInputs.forEach(input => {
+      input.setAttribute('disabled', 'disabled');
+    });
+    formBtn.setAttribute('disabled', 'disabled');
+
+
+    formBody.style.filter = 'blur(1px)';
+
+    statusMessage.innerHTML = `
+        <div class="status-messag">
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block; shape-rendering: auto;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+          <g transform="rotate(0 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(30 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(60 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(90 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(120 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(150 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(180 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(210 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(240 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(270 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(300 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+            </rect>
+          </g><g transform="rotate(330 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#7175fe">
+              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+            </rect>
+          </g>
+          </svg>
+        </div>`;
+  };
+
+  //СООБЩЕНИЕ УСПЕШНО ПОЛУЧЕННО
+  const successMessage = () => {
+    statusMessage.innerHTML = `
+        <div class="status-messag status-messag__succes">
+          <img class="status-messag__img" src="images/check.png" alt="Check">
+          <span class="status-messag__text" >Ваши данные у нас ))<span>
+        </div>`;
+  };
+
+  //СООБЩЕНИЕ ОБ ОШИБКИ
+  const errorMessage = () => {
+    statusMessage.innerHTML = `
+        <div class="status-messag status-messag__error">
+          <img class="status-messag__img" src="images/close.png" alt="Bad">
+          <span class="status-messag__text" >Произошла ошибка<span>
+        </div>`;
   };
 
   //работа по формам
@@ -85,10 +175,6 @@ const valid = () => {
     });
 
     maskPhone('input[name="phone"]');
-
-    // const loadMessage = () => {
-    //   console.log('из функции лойд мессадж');
-    // };
 
     //Отправка данных на сервер
     form.addEventListener('submit', event => {
@@ -119,11 +205,9 @@ const valid = () => {
 
       if (checkInputs()) {
 
-        target.appendChild(statusMessage);
+        target.insertAdjacentElement('beforebegin', statusMessage);
 
-        statusMessage.textContent = loadMessage;
-
-        // loadMessage();
+        loadMessage(target, targetInput);
 
         const formData = new FormData(target);
         const body = {};
@@ -140,18 +224,16 @@ const valid = () => {
 
         //Если все гуд
         const successResolve = () => {
-          statusMessage.style.display = 'block';
-          statusMessage.textContent = successMessage;
+          successMessage(target);
           clearInputs(targetInput);
-          setTimeout(() => { closeMessage(target); }, 3000);
+          setTimeout(() => { closeMessage(target, targetInput); }, 3000);
         };
 
         //Если ошибка
         const errorResolve = () => {
-          statusMessage.style.display = 'block';
-          statusMessage.textContent = errorMessage;
+          errorMessage(target);
           clearInputs(targetInput);
-          setTimeout(() => { closeMessage(target); }, 3000);
+          //setTimeout(() => { closeMessage(target, targetInput); }, 3000);
         };
 
         postData(body)

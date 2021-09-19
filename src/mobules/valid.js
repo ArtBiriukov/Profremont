@@ -233,7 +233,7 @@ const valid = () => {
         const errorResolve = () => {
           errorMessage(target);
           clearInputs(targetInput);
-          //setTimeout(() => { closeMessage(target, targetInput); }, 3000);
+          setTimeout(() => { closeMessage(target, targetInput); }, 3000);
         };
 
         postData(body)

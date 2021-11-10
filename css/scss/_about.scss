@@ -1,0 +1,46 @@
+#about {
+  background-color: #466a78;
+  color: #fff;
+}
+
+.about-inner {
+  text-align: center;
+  font-size: 18px;
+}
+
+.about-inner span,
+.about-inner a {
+  color: #ffb135;
+}
+
+.about-inner a {
+  text-decoration: underline;
+}
+
+.about-inner a:hover {
+  text-decoration: none;
+}
+
+.about-inner p {
+  margin: 20px 0px 0px;
+}
+
+.about-inner img {
+  border-radius: 100%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.about-inner:after {
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 100px;
+  top: 0px;
+  right: -12px;
+  background-image: url("../images/about-arrow.png");
+  background-repeat: no-repeat;
+}
+
+#about .col-lg-4:last-child .about-inner:last-child:after {
+  display: none;
+}

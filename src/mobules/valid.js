@@ -47,6 +47,7 @@ const valid = () => {
     targetInputs.forEach(input => {
       input.removeAttribute('disabled');
     });
+
     targetBtn.removeAttribute('disabled');
 
     const headerModal = document.querySelector('.header-modal'),
@@ -58,14 +59,12 @@ const valid = () => {
       headerModal.classList.toggle('active-menu');
       overlay.classList.toggle('active-menu');
       scrollBtn.classList.toggle('active-zindex');
-      statusMessage.remove();
     }
 
     if (targetForm.name === 'application-form') {
       servicesModal.classList.toggle('active-menu');
       overlay.classList.toggle('active-menu');
       scrollBtn.classList.toggle('active-zindex');
-      statusMessage.remove();
     }
 
     statusMessage.remove();

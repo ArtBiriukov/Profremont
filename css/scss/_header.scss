@@ -1,0 +1,30 @@
+.heading-image {
+  height: 41px;
+}
+
+.heading-image i {
+  background-image: url("../images/heading-icons.png");
+  background-repeat: no-repeat;
+  height: 41px;
+  width: 41px;
+  display: inline-block;
+  position: relative;
+}
+
+.heading-image i:after,
+.heading-image i:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 73px;
+  height: 1px;
+  top: 21px;
+}
+
+.heading-image i:after {
+  left: 57px;
+}
+
+.heading-image i:before {
+  right: 57px;
+}

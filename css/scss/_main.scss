@@ -1,0 +1,77 @@
+* {
+  outline: none !important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "NeoSansCyr-Regular", sans-serif;
+  line-height: 150%;
+  font-size: 16px;
+  height: 100%;
+  font-weight: 300;
+  color: #4f686e;
+}
+
+h2 span {
+  font-family: "NeoSansCyr-Medium", sans-serif;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+.wrap_items {
+  display: flex;
+  align-items: center;
+}
+
+.wrap_item {
+  flex-wrap: wrap;
+}
+
+// .button {
+//   margin-top: 27px;
+// }
+
+//ДЛЯ span ВЫДЕЛЕНИЕ ТЕКСТА
+.text-normal {
+  font-family: "NeoSansCyr-Medium", sans-serif !important;
+}
+
+.text-warning {
+  color: #ffb438;
+}
+
+//ЗАГАЛОВКИ
+.heading {
+  margin-top: 32px;
+  margin-bottom: 72px;
+}
+
+.heading.white {
+  color: #fff;
+}
+
+//СЕКЦИИ
+.section {
+  padding: 60px 0 80px;
+  overflow: hidden;
+}
+
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+//MAP
+#map .map {
+  height: 500px;
+  overflow: hidden;
+}
+#map iframe {
+  border: 0 !important;
+}
+

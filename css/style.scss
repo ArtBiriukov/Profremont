@@ -1,0 +1,169 @@
+@import "scss/main";
+@import "scss/forms";
+@import "scss/modals";
+@import "scss/nav";
+@import "scss/menu";
+
+
+.active-menu {
+  display: block !important;
+}
+
+.active-zindex {
+  z-index: -1;
+}
+
+.slogan {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+// #header .slogan {
+//   padding-top: 45px;
+// }
+
+.phone {
+  font-size: 24px;
+}
+
+.phone a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@import 'scss/header';
+@import 'scss/ico';
+@import 'scss/offer';
+@import 'scss/benefit';
+@import 'scss/service';
+@import 'scss/order';
+@import "scss/reviews";
+@import "scss/about";
+@import "scss/documents";
+@import "scss/contacts";
+@import "scss/footer";
+
+#calc {
+  background-color: #466a78;
+}
+
+.message-calc {
+  width: 300px;
+  color: white;
+  font-family: sans-serif;
+  padding: 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 30px;
+  top: calc(100vh + 20px);
+  transition-duration: 0.5s;
+}
+
+.margin-row {
+  margin-bottom: 50px;
+}
+
+
+/*Анимация*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotateInUpLeft {
+  from {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInUpLeft {
+  from {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+
+.balkony #offer {
+  background: url(../images/offer-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.balkony .order {
+  background: url(../images/order-bg.jpg) no-repeat center;
+}
+
+.kuhni #offer {
+  background: url(../images/offer3-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.kuhni .order {
+  background: url(../images/order3-bg.jpg) no-repeat center;
+}
+
+.kuhni #order_2.order {
+  background: url(../images/order3-2-bg.jpg) no-repeat center;
+}
+
+.dvery #offer {
+  background: url(../images/offer4-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.dvery .order {
+  background: url(../images/order4-bg.jpg) no-repeat center;
+}
+
+.potolki #offer {
+  background: url(../images/offer5-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.potolki .order {
+  background: url(../images/order5-bg.jpg) no-repeat center;
+}
+
+.show-btn {
+  cursor: pointer;
+  opacity: 1 !important;
+}
+
+.smooth-scroll {
+  opacity: 0;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  transform: rotate(90deg);
+  transition: opacity .2s ease-in;
+}
+
+@import "scss/media";

@@ -4,6 +4,7 @@ const modals = () => {
     overlay = document.querySelector('.overlay'),
     photoModal = document.querySelector('.photo-modal'),
     contentPhoto = photoModal.querySelector('.modal-content'),
+    clouseBtn = photoModal.querySelector('.fancybox-close'),
     scrollBtn = document.querySelector('.smooth-scroll');
 
   const overlayAndScrollToggle = () => {
@@ -64,10 +65,22 @@ const modals = () => {
       }
     }
 
-    if (target.classList.contains('close__photo') ||
+    if (target.classList.contains('fancybox-close') ||
     target.classList.contains('active-menu')) {
       photosModal();
     }
+  });
+
+  const clouseItem = () => {
+    clouseBtn.classList.toggle('opacity__btn');
+  };
+
+  contentPhoto.addEventListener('mouseover', () => {
+    clouseItem();
+  });
+
+  contentPhoto.addEventListener('mouseleave', () => {
+    clouseItem();
   });
 
 };

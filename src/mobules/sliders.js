@@ -158,7 +158,7 @@ const sliders = () => {
 
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 769,
         slidersToShow: 1
       }]
   };

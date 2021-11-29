@@ -129,4 +129,10 @@ p.services-image_mobile {
 
 .services__arrow > img {
   width: 100%;
+  opacity: 0.45;
+  transition: opacity 0.2s ease-in;
+}
+
+.services__arrow > img:hover {
+  opacity: 1;
 }

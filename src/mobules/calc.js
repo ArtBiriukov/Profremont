@@ -48,7 +48,7 @@ const calc = () => {
 
       if (typeValue === '--' && target === calcSquare) {
         showMessag();
-        setInterval(leaveMessag, 2500);
+        setTimeout(leaveMessag, 3000);
       } else {
         leaveMessag();
       }

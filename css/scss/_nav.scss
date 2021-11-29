@@ -4,7 +4,6 @@
 
 #navigation-fixed .navbar-brand {
   padding: 0;
-  margin: 0px 60px 0px 0px;
 }
 
 #navigation-fixed .phone {
@@ -40,7 +39,6 @@
 }
 
 #navigation-fixed .navbar-nav > li > a {
-  padding: 20px 7px 20px;
   font-size: 14px;
 }
 
@@ -66,4 +64,10 @@
 #navigation .navbar-toggle:hover,
 #navigation .navbar-toggle:focus {
   background-color: #f5f6f6;
+}
+
+.navbar-collapse.collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between
 }

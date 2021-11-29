@@ -260,7 +260,7 @@ input.error {
 .photo-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -295,13 +295,8 @@ input.error {
 }
 
 .fancybox-skin {
-  -webkit-animation-name: zoom;
-          animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-}
-
-.modal-content {
+  -webkit-box-shadow: 0 16px 24px 0 #00000059;
+          box-shadow: 0 16px 24px 0 #00000059;
   -webkit-animation-name: zoom;
           animation-name: zoom;
   -webkit-animation-duration: 0.6s;
@@ -448,6 +443,7 @@ input.error {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1300;
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.45);
@@ -572,7 +568,6 @@ input.error {
 
 #navigation-fixed .navbar-brand {
   padding: 0;
-  margin: 0px 60px 0px 0px;
 }
 
 #navigation-fixed .phone {
@@ -609,7 +604,6 @@ input.error {
 }
 
 #navigation-fixed .navbar-nav > li > a {
-  padding: 20px 7px 20px;
   font-size: 14px;
 }
 
@@ -635,6 +629,18 @@ input.error {
 #navigation .navbar-toggle:hover,
 #navigation .navbar-toggle:focus {
   background-color: #f5f6f6;
+}
+
+.navbar-collapse.collapse {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #menu {
@@ -735,10 +741,6 @@ input.error {
 
 .active-menu {
   display: block !important;
-}
-
-.active-zindex {
-  z-index: -1;
 }
 
 .slogan {
@@ -981,6 +983,13 @@ input.error {
 
 .benefits__arrow > img {
   width: 100%;
+  opacity: 0.5;
+  -webkit-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+}
+
+.benefits__arrow > img:hover {
+  opacity: 1;
 }
 
 #services {
@@ -1127,6 +1136,13 @@ p.services-image_mobile {
 
 .services__arrow > img {
   width: 100%;
+  opacity: 0.45;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+
+.services__arrow > img:hover {
+  opacity: 1;
 }
 
 .order {
@@ -1563,24 +1579,24 @@ p.services-image_mobile {
 /*Анимация*/
 .animated {
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @-webkit-keyframes rotateInUpLeft {
   from {
     -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
+            transform-origin: left bottom;
     -webkit-transform: rotate3d(0, 0, 1, 45deg);
-    transform: rotate3d(0, 0, 1, 45deg);
+            transform: rotate3d(0, 0, 1, 45deg);
     opacity: 0;
   }
   to {
     -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
+            transform-origin: left bottom;
     -webkit-transform: none;
-    transform: none;
+            transform: none;
     opacity: 1;
   }
 }
@@ -1588,23 +1604,23 @@ p.services-image_mobile {
 @keyframes rotateInUpLeft {
   from {
     -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
+            transform-origin: left bottom;
     -webkit-transform: rotate3d(0, 0, 1, 45deg);
-    transform: rotate3d(0, 0, 1, 45deg);
+            transform: rotate3d(0, 0, 1, 45deg);
     opacity: 0;
   }
   to {
     -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
+            transform-origin: left bottom;
     -webkit-transform: none;
-    transform: none;
+            transform: none;
     opacity: 1;
   }
 }
 
 .rotateInUpLeft {
   -webkit-animation-name: rotateInUpLeft;
-  animation-name: rotateInUpLeft;
+          animation-name: rotateInUpLeft;
 }
 
 .balkony #offer {
@@ -1913,9 +1929,6 @@ p.services-image_mobile {
   }
   #benefits .col-md-4:last-child .col-sm-6:last-child .benefit-title {
     margin-bottom: 0;
-  }
-  .document-inner {
-    margin-bottom: 40px;
   }
   #documents .col-sm-4:last-child .document-inner {
     margin-bottom: 0;

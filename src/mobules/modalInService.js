@@ -2,20 +2,17 @@ const modalInService = () => {
   const serviceImages = document.querySelectorAll('.service-image'),
     overlay = document.querySelector('.overlay'),
     servicesImgModal = document.querySelector('.services-img-modal'),
-    servicesWrap = servicesImgModal.querySelector('.services-img__wrap'),
-    scrollBtn = document.querySelector('.smooth-scroll');
+    servicesWrap = servicesImgModal.querySelector('.services-img__wrap'),;
 
 
   const overlayAndScrollToggle = () => {
     overlay.classList.toggle('active-menu');
-    scrollBtn.classList.toggle('active-zindex');
   };
 
   const photosModal = () => {
     overlayAndScrollToggle();
     servicesImgModal.classList.toggle('active-menu');
   };
-
 
   serviceImages.forEach(item => {
 
@@ -65,8 +62,3 @@ const modalInService = () => {
 };
 
 export default modalInService;
-
-
-
-
-

@@ -4,23 +4,14 @@
 @import "scss/nav";
 @import "scss/menu";
 
-
 .active-menu {
   display: block !important;
-}
-
-.active-zindex {
-  z-index: -1;
 }
 
 .slogan {
   font-size: 18px;
   text-transform: uppercase;
 }
-
-// #header .slogan {
-//   padding-top: 45px;
-// }
 
 .phone {
   font-size: 24px;
@@ -64,27 +55,20 @@
   margin-bottom: 50px;
 }
 
-
 /*Анимация*/
 .animated {
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 @-webkit-keyframes rotateInUpLeft {
   from {
-    -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
-    -webkit-transform: rotate3d(0, 0, 1, 45deg);
     transform: rotate3d(0, 0, 1, 45deg);
     opacity: 0;
   }
   to {
-    -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
-    -webkit-transform: none;
     transform: none;
     opacity: 1;
   }
@@ -92,23 +76,18 @@
 
 @keyframes rotateInUpLeft {
   from {
-    -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
-    -webkit-transform: rotate3d(0, 0, 1, 45deg);
     transform: rotate3d(0, 0, 1, 45deg);
     opacity: 0;
   }
   to {
-    -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
-    -webkit-transform: none;
     transform: none;
     opacity: 1;
   }
 }
 
 .rotateInUpLeft {
-  -webkit-animation-name: rotateInUpLeft;
   animation-name: rotateInUpLeft;
 }
 

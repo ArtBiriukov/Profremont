@@ -28,7 +28,6 @@ const scrollTop = () => {
       scrollBtn.classList.remove('show-btn');
     }
   });
-
 };
 
 export default scrollTop;

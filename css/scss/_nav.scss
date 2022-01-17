@@ -2,16 +2,14 @@
   float: right;
 }
 
-#navigation-fixed .navbar-brand {
-  padding: 0;
+.hide-menu {
+  margin-top: 0px !important; 
 }
 
-#navigation-fixed .phone {
-  padding: 18px 20px 18px 0px;
-}
-
-#navigation-fixed .top-btn {
-  padding: 10px 0px;
+.navbar-collapse.collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between
 }
 
 #navigation-fixed {
@@ -20,37 +18,45 @@
   border: 0;
   background-color: #fff;
   transition: all 0.3s ease-out;
-}
 
-.hide-menu {
-  margin-top: 0px !important; 
-}
+  & .navbar-brand {
+    padding: 0;
+  }
+  
+  & .phone {
+    padding: 18px 20px 18px 0px;
+  }
+  
+  & .top-btn {
+    padding: 10px 0px;
+  }
 
-#navigation-fixed:after {
-  position: absolute;
-  z-index: 1030;
-  bottom: -1px;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #f2f2f2;
-  background-color: rgba(0, 0, 0, 0.1);
-}
+  &:after {
+    position: absolute;
+    z-index: 1030;
+    bottom: -1px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
-#navigation-fixed .navbar-nav > li > a {
-  font-size: 14px;
-}
-
-#navigation-fixed .navbar-brand {
-  height: 60px;
-}
-
-#navigation-fixed .navbar-nav > .active > a,
-#navigation-fixed .navbar-nav > .active > a:hover,
-#navigation-fixed .navbar-nav > .active > a:focus {
-  color: inherit;
-  background-color: #f5f6f6;
+  & .navbar-brand {
+    height: 60px;
+  }
+  
+  & .navbar-nav > li > a {
+    font-size: 14px;
+  }
+  
+  & .navbar-nav > .active > a,
+  & .navbar-nav > .active > a:hover,
+  & .navbar-nav > .active > a:focus {
+    color: inherit;
+    background-color: #f5f6f6;
+  }
 }
 
 #navigation {
@@ -59,15 +65,9 @@
   margin: 0;
   background-color: #2a3436;
   padding: 16px 0px 17px;
-}
 
-#navigation .navbar-toggle:hover,
-#navigation .navbar-toggle:focus {
-  background-color: #f5f6f6;
-}
-
-.navbar-collapse.collapse {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between
+  & .navbar-toggle:hover,
+  & .navbar-toggle:focus {
+    background-color: #f5f6f6;
+  }
 }

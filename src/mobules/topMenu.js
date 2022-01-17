@@ -1,13 +1,12 @@
 const topMenu = () => {
 
-  const navFix = document.querySelector('#navigation-fixed'),
+  const navFix = document.getElementById('navigation-fixed'),
   navigationSection = document.querySelector('#navigation'),
-  navbarCollapseFixed = document.querySelector('#navbar-collapse-fixed'),
-  navbarCollapse = document.querySelector('#navbar-collapse'),
+  navbarCollapseFixed = document.getElementById('navbar-collapse-fixed'),
+  navbarCollapse = document.getElementById('navbar-collapse'),
   menuLinks = navbarCollapseFixed.querySelectorAll('ul>li>a'),
   utpButton = document.querySelector('.utp-button').querySelector('a'),
   aboutButton = document.querySelector('.about-wrap').querySelector('.fancyboxModal');
-
 
   const checkClassFixMenu = () => {
     if (navbarCollapseFixed.classList.contains('collapse')){
@@ -39,12 +38,14 @@ const topMenu = () => {
   };
 
   const scrollSlow = event => {
+
     event.preventDefault();
 
-    toggelNavbar()
+    toggelNavbar();
 
     const itemHash = event.currentTarget.getAttribute('href');
-    document.querySelector('' + itemHash).scrollIntoView({
+
+    document.querySelector(`${itemHash}`).scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -78,9 +79,7 @@ const topMenu = () => {
   });
 
   //Скрол для фиксированого меню
-  window.addEventListener('scroll', () => {
-    navFixShow();
-  });
+  window.addEventListener('scroll', () => navFixShow());
 
   // Плавный скрол по странице
   menuLinks.forEach(link => {

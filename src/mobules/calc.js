@@ -3,8 +3,7 @@ const calc = () => {
     calcType = document.getElementById('calc-type'),
     calcSquare = document.getElementById('calc-input'),
     calcTypeMaterial = document.getElementById('calc-type-material'),
-    calcTotal = document.getElementById('calc-total'),
-    calcMessage = document.querySelector('.message-calc');
+    calcTotal = document.getElementById('calc-total');
 
   //valid input
   const checkValue = () => {
@@ -35,23 +34,36 @@ const calc = () => {
         calcTypeMaterial.value = '--';
       }
 
-      //выподающие сообщение
-      const hightMes = calcMessage.clientHeight;
+      /*выподающие сообщение*/
+      const createNotification = () => {
+        const message = document.createElement('div');
+        message.className = 'message-calc';
+        message.innerHTML = 'Сначало выберите <b>балкон/лоджия</b>!';
 
-      const showMessag = () => {
-        calcMessage.style.top = `calc(100vh - ${30 + hightMes}px)`;
-      };
+        document.body.appendChild(message);
 
-      const leaveMessag = () => {
-        calcMessage.style.top = `calc(100vh + 30px)`;
-      };
+        const hightMes = message.clientHeight;
 
-      if (typeValue === '--' && target === calcSquare) {
-        showMessag();
-        setTimeout(leaveMessag, 3000);
-      } else {
-        leaveMessag();
+        message.style.bottom += `${hightMes - 10}px`;
+
+        setTimeout(() =>{
+          message.style.bottom = '-100px';
+  
+          setTimeout(() =>{
+            message.remove();
+          }, 300);
+  
+        },3000);
       }
+
+      if (typeValue === '--' && target === calcSquare) { 
+        const messageEl = document.querySelector('.message-calc');
+
+        if (!messageEl) {
+          createNotification();
+        }
+        return;
+      } 
 
       //если поле площадь заполнена и выбран тип тогда считаем
       if (squareValue && typeValue !== '--') {
@@ -83,7 +95,6 @@ const calc = () => {
       if (total) {
         animateValue(0, total, 1000);
       }
-
     };
 
     if (target === calcType || target === calcSquare || target === calcTypeMaterial) {
@@ -91,7 +102,6 @@ const calc = () => {
     }
 
   });
-
 };
 
 export default calc;

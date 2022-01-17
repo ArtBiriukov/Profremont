@@ -5,7 +5,8 @@ import calc from "./mobules/calc";
 import valid from "./mobules/valid";
 import modals from "./mobules/modals";
 import topMenu from "./mobules/topMenu";
-// import modalInService from "./mobules/modalInService";
+import commentGet from "./mobules/commentGet";
+import photoModals from "./mobules/photoModals";
 
 scrollTop();
 timer('30 September 2022');
@@ -14,4 +15,5 @@ calc();
 valid();
 modals();
 topMenu();
-// modalInService();
+photoModals();
+commentGet();

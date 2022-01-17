@@ -17,25 +17,25 @@
   position: relative;
   padding: 27px 0px 31px 45px;
   display: inline-block;
+
+  & p {
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+  
+  & a {
+    color: #ffb135;
+  }
+  
+  & img {
+    position: absolute;
+    display: block;
+    left: 0;
+  }
 }
 
 .created-inner {
   padding-top: 10px;
-}
-
-.footer-created p {
-  margin-bottom: 0;
-  line-height: 1.4;
-}
-
-.footer-created a {
-  color: #ffb135;
-}
-
-.footer-created img {
-  position: absolute;
-  display: block;
-  left: 0;
 }
 
 .footer-copyright-text {

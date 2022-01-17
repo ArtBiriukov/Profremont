@@ -32,10 +32,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-// .button {
-//   margin-top: 27px;
-// }
-
 //ДЛЯ span ВЫДЕЛЕНИЕ ТЕКСТА
 .text-normal {
   font-family: "NeoSansCyr-Medium", sans-serif !important;
@@ -49,29 +45,186 @@ h3 {
 .heading {
   margin-top: 32px;
   margin-bottom: 72px;
-}
 
-.heading.white {
-  color: #fff;
+  &.white {
+    color: #fff;
+  }
 }
 
 //СЕКЦИИ
 .section {
   padding: 60px 0 80px;
   overflow: hidden;
+
+  &-title {
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 
-.section-title {
-  text-transform: uppercase;
-  text-align: center;
+//Секциия отзывов
+.comments {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &-item {
+    margin-bottom: 80px;
+  
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__loading-error {
+    padding: 30px;
+    background-color: #db4e1b;
+    color: white;
+    text-align: center;
+    border-radius: 40px;
+    & h2 {
+      font-size: 22px;
+      margin: 0px;
+    }
+  }
 }
 
 //MAP
-#map .map {
-  height: 500px;
-  overflow: hidden;
-}
-#map iframe {
-  border: 0 !important;
+#map {
+  & .map {
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  & iframe {
+    border: 0 !important;
+  }
 }
 
+.active-menu {
+  display: block !important;
+}
+
+.slogan {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.phone {
+  font-size: 24px;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+#calc {
+  background-color: #466a78;
+}
+
+.message-calc {
+
+  position: fixed;
+  bottom: -100px;
+  left: 30px;
+
+  color: white;
+
+  padding: 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+
+  transition-duration: 0.5s;
+}
+
+.margin-row {
+  margin-bottom: 50px;
+}
+
+/*Анимация*/
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes rotateInUpLeft {
+  from {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+  to {
+    transform-origin: left bottom;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.rotateInUpLeft {
+  animation-name: rotateInUpLeft;
+}
+
+.balkony {
+  & #offer {
+    background: url(../images/offer-bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  
+  & .order {
+    background: url(../images/order-bg.jpg) no-repeat center;
+  }
+}
+
+.kuhni {
+  & #offer {
+    background: url(../images/offer3-bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  
+  & .order {
+    background: url(../images/order3-bg.jpg) no-repeat center;
+  }
+  
+  & #order_2.order {
+    background: url(../images/order3-2-bg.jpg) no-repeat center;
+  }
+}
+
+.dvery{
+  & #offer {
+    background: url(../images/offer4-bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  
+  & .order {
+    background: url(../images/order4-bg.jpg) no-repeat center;
+  }
+}
+
+.potolki {
+  & #offer {
+    background: url(../images/offer5-bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  
+  & .order {
+    background: url(../images/order5-bg.jpg) no-repeat center;
+  }
+}
+
+.show-btn {
+  cursor: pointer;
+  opacity: 1 !important;
+}
+
+.smooth-scroll {
+  opacity: 0;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  transform: rotate(90deg);
+  transition: opacity .2s ease-in;
+}

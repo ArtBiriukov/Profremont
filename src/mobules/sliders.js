@@ -8,6 +8,7 @@ const sliders = () => {
       position = 0,
       slidersToShow = 3,
       infinity = true,
+      interval = 3000,
       responsive = [],
       sliderWidthValid = false,
     }) {
@@ -27,6 +28,7 @@ const sliders = () => {
       this.options = {
         position,
         infinity,
+        interval,
         sliderWidth: parseInt(this.main.clientWidth / this.slidersToShow),
         maxPosition: this.slides.length - this.slidersToShow
       };
@@ -45,6 +47,8 @@ const sliders = () => {
       if (this.responsive) {
         this.responseInit();
       }
+
+      this.startSlide();
     }
 
     addClass() {
@@ -82,7 +86,6 @@ const sliders = () => {
         }
         this.wrap.style.transform = `translateX(-${this.options.position * this.options.sliderWidth}px)`;
       }
-
     }
 
     nextSlider() {
@@ -98,7 +101,7 @@ const sliders = () => {
     }
 
     responseInit() {
-      const slidersToShowOnStart =  this.slidersToShow;
+      const slidersToShowOnStart = this.slidersToShow;
       const allResponse = this.responsive.map(item => item.breakpoint);
       const maxResponse = Math.max(...allResponse);
 
@@ -128,6 +131,23 @@ const sliders = () => {
       window.addEventListener('resize', checkResponse);
     }
 
+    autoPlay() {
+      this.play = setInterval(this.nextSlider.bind(this), this.options.interval);
+    }
+
+    startSlide() {
+      this.autoPlay();
+
+      this.prevBtn.addEventListener('mouseout', this.autoPlay.bind(this));
+      this.nextBtn.addEventListener('mouseout', this.autoPlay.bind(this));
+
+      this.prevBtn.addEventListener('mouseover', this.stopSlide.bind(this));
+      this.nextBtn.addEventListener('mouseover', this.stopSlide.bind(this));
+    }
+
+    stopSlide() {
+      clearInterval(this.play);
+    }
   }
 
   const sliderBenefitConfig = {
@@ -139,12 +159,12 @@ const sliders = () => {
     slidersToShow: 3,
     infinity: true,
     sliderWidthValid: true,
+    interval: 4000,
 
-    responsive: [
-      {
-        breakpoint: 576,
-        slidersToShow: 1
-      }]
+    responsive: [{
+      breakpoint: 576,
+      slidersToShow: 1
+    }]
   };
 
   const sliderServiceConfig = {
@@ -156,18 +176,16 @@ const sliders = () => {
     slidersToShow: 2,
     infinity: true,
 
-    responsive: [
-      {
-        breakpoint: 769,
-        slidersToShow: 1
-      }]
+    responsive: [{
+      breakpoint: 769,
+      slidersToShow: 1
+    }]
   };
 
   const sliderBenefit = new SliderCarusel(sliderBenefitConfig);
   const sliderService = new SliderCarusel(sliderServiceConfig);
   sliderService.init();
   sliderBenefit.init();
-
 };
 
 export default sliders;

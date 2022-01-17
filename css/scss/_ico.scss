@@ -1,11 +1,11 @@
 //БЕНЕФИТ
 .benefit-ico {
   background-position: 0px 0px;
-}
 
-.benefit-ico:after,
-.benefit-ico:before {
-  background-color: #546a76;
+  &:after,
+  &:before {
+    background-color: #546a76;
+  }
 }
 
 //КАЛЬКУЛЯТОР
@@ -16,49 +16,49 @@
 //СЕРВИС
 .service-ico {
   background-position: -41px 0px;
-}
 
-.service-ico:after,
-.service-ico:before {
-  background-color: #fff;
+  &:after,
+  &:before {
+    background-color: #fff;
+  }
 }
 
 //ОТЗЫВЫ
 .review-ico {
   background-position: -82px 0px;
-}
 
-.review-ico:after,
-.review-ico:before {
-  background-color: #5f747f;
+  &:after,
+  &:before {
+    background-color: #5f747f;
+  }
 }
 
 //ОБ, ПЕРЕД ДОКУМЕНТАМИ
 .employee-ico {
   background-position: -123px 0px;
-}
 
-.employee-ico:after,
-.employee-ico:before {
-  background-color: #ffffff;
+  &:after,
+  &:before {
+    background-color: #ffffff;
+  }
 }
 
 //СЕРТИФИКАТЫ
 .document-ico {
   background-position: -164px 0px;
-}
 
-.document-ico:after,
-.document-ico:before {
-  background-color: #546a76;
+  &:after,
+  &:before {
+    background-color: #546a76;
+  }
 }
 
 //КОНТАКТЫ
 .contact-ico {
   background-position: -205px 0px;
-}
 
-.contact-ico:after,
-.contact-ico:before {
-  background-color: #fff;
+  &:after,
+  &:before {
+    background-color: #fff;
+  }
 }

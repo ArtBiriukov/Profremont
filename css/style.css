@@ -1707,7 +1707,7 @@ p.services-image_mobile {
   color: #fff;
 }
 
-.contact-cart {
+.contacts-cart {
   background-color: #fff;
   padding: 60px;
   border-radius: 10px;
@@ -1718,16 +1718,16 @@ p.services-image_mobile {
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-.contact-cart-inner {
+.contacts-cart-inner {
   position: relative;
 }
 
-.contact-cart a {
+.contacts-cart a {
   text-decoration: none;
   color: #4f686e;
 }
 
-.contact-icons {
+.contacts-icons {
   background-image: url("../images/contact-icons.png");
   background-repeat: no-repeat;
   width: 30px;
@@ -1736,19 +1736,19 @@ p.services-image_mobile {
   margin-right: 15px;
 }
 
-.contact-phone {
+.contacts-phone {
   background-position: 0px 0px;
 }
 
-.contact-address {
+.contacts-address {
   background-position: -60px 0px;
 }
 
-.contact-email {
+.contacts-email {
   background-position: -30px 0px;
 }
 
-.contact-regime {
+.contacts-regime {
   background-position: -90px 0px;
 }
 

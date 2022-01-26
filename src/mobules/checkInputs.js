@@ -30,7 +30,6 @@ const checkInputs = target => {
       checkBed();
     }
   }
-
 };
 
 export default checkInputs;

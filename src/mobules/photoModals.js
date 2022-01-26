@@ -1,33 +1,23 @@
 const photoModals = () => {
 
-  const documentImgs = document.querySelectorAll('.document-inner');
-  const serviceImages = document.querySelectorAll('.service-image');
+  const documentImgs = document.querySelectorAll('.document-inner'),
+    photoModalContent = document.querySelector('.photo-modal__content'),
+    photoModalImg = document.createElement('img');
 
-  serviceImages.forEach((serviceImage) => {
-    serviceImage.addEventListener('click', function(e) {
+  photoModalImg.classList.add('photo-modal__img');
+
+  for (const documentImg of documentImgs) {
+
+    documentImg.addEventListener('click', function (e) {
       e.preventDefault();
 
-      const images = this.querySelectorAll('a');
+      const pathOriginImg = documentImg.querySelector('a').getAttribute('href');
 
-      console.log(images);
+      photoModalImg.setAttribute('src', pathOriginImg);
+
+      photoModalContent.appendChild(photoModalImg);
     })
-  })
-
-  documentImgs.forEach(documentImg => {
-    documentImg.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const originImg = this.querySelector('a').href;
-
-      console.dir(originImg);
-      
-    })
-  })
-
-
-
-
-
+  }
 }
 
 export default photoModals;

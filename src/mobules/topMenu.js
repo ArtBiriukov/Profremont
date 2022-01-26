@@ -1,17 +1,17 @@
 const topMenu = () => {
 
   const navFix = document.getElementById('navigation-fixed'),
-  navigationSection = document.querySelector('#navigation'),
-  navbarCollapseFixed = document.getElementById('navbar-collapse-fixed'),
-  navbarCollapse = document.getElementById('navbar-collapse'),
-  menuLinks = navbarCollapseFixed.querySelectorAll('ul>li>a'),
-  utpButton = document.querySelector('.utp-button').querySelector('a'),
-  aboutButton = document.querySelector('.about-wrap').querySelector('.fancyboxModal');
+    navigationSection = document.querySelector('#navigation'),
+    navbarCollapseFixed = document.getElementById('navbar-collapse-fixed'),
+    navbarCollapse = document.getElementById('navbar-collapse'),
+    menuLinks = navbarCollapseFixed.querySelectorAll('ul>li>a'),
+    utpButton = document.querySelector('.utp-button').querySelector('a'),
+    aboutButton = document.querySelector('.about-wrap').querySelector('.fancyboxModal');
 
   const checkClassFixMenu = () => {
-    if (navbarCollapseFixed.classList.contains('collapse')){
+    if (navbarCollapseFixed.classList.contains('collapse')) {
       navFix.classList.remove('hide-menu');
-    } 
+    }
   }
 
   const navFixShow = () => {
@@ -24,17 +24,17 @@ const topMenu = () => {
 
   const toggelNavbar = (idNavbar) => {
 
-   if (!idNavbar) {
+    if (!idNavbar) {
 
-    if (!navbarCollapse.classList.contains('collapse')) {
-      navbarCollapse.classList.add('collapse')
-    } else if (!navbarCollapseFixed.classList.contains('collapse')) {
-      navbarCollapseFixed.classList.add('collapse')
+      if (!navbarCollapse.classList.contains('collapse')) {
+        navbarCollapse.classList.add('collapse')
+      } else if (!navbarCollapseFixed.classList.contains('collapse')) {
+        navbarCollapseFixed.classList.add('collapse')
+      }
+
+    } else {
+      document.querySelector(idNavbar).classList.toggle('collapse');
     }
-
-   } else {
-    document.querySelector(idNavbar).classList.toggle('collapse');
-   }   
   };
 
   const scrollSlow = event => {
@@ -57,25 +57,25 @@ const topMenu = () => {
   document.addEventListener('click', event => {
     const target = event.target;
 
-      if (target.closest('.icon-bar') || target.closest('.navbar-toggle')) {
-        event.preventDefault();
+    if (target.closest('.icon-bar') || target.closest('.navbar-toggle')) {
+      event.preventDefault();
 
-        if (!target.dataset.target) {
-          toggelNavbar(target.parentElement.dataset.target);
-          navFixShow();
-        } else {
-          toggelNavbar(target.dataset.target);
-          navFixShow();
-        }
-
+      if (!target.dataset.target) {
+        toggelNavbar(target.parentElement.dataset.target);
+        navFixShow();
       } else {
+        toggelNavbar(target.dataset.target);
+        navFixShow();
+      }
 
-        if (!target.closest('#navigation-fixed') && !navbarCollapseFixed.classList.contains('collapse') || 
+    } else {
+
+      if (!target.closest('#navigation-fixed') && !navbarCollapseFixed.classList.contains('collapse') ||
         !target.closest('#navigation') && !navbarCollapse.classList.contains('collapse')) {
-          toggelNavbar();
-          navFixShow();
-        }
-      }      
+        toggelNavbar();
+        navFixShow();
+      }
+    }
   });
 
   //Скрол для фиксированого меню

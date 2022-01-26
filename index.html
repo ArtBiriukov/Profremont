@@ -9,11 +9,12 @@
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 	<link href="favicon.ico" rel="icon">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
 	<link href="fonts/font.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/animate.css" rel="stylesheet">
 
 	<title>Установка пластиковых (ПВХ) окон</title>
+
 	<meta name="keywords"
 		content="пластиковые, окна, пвх, вставить, века, дом, профиль, поставить, установить, установка, стандартные, цветные, сайт, современные, купить, фирма, цены, дешевые, стоимость, остекление, монтаж">
 	<meta name="description"
@@ -76,7 +77,9 @@
 			<div class="row wrap_items">
 				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 block">
 					<div class="logotype">
-						<img src="images/logotype.png" alt="Профремонт">
+						<a href="/">
+							<img src="images/logotype.png" alt="Профремонт" />
+						</a>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-5 col-lg-5 hidden-xs">
@@ -516,42 +519,42 @@
 		</div>
 	</div>
 
-  <div id="contacts" class="section">
-    <div class="container">
-      <div class="section-title">
-        <div class="heading-image"><i class="contact-ico"></i></div>
-        <h2 class="heading"><span>Контактная</span> информация</h2>
-      </div>
-      <div class="contacts-cart-inner">
-        <div class="contacts-cart row">
-          <div class="col-md-5">
-            <div class="margin-row">
-              <a href="tel:89876543210"><i class="contacts-icons contacts-phone"></i> +7 (987)
-                654-32-10</a>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="margin-row">
-              <i class="contacts-icons contacts-address"></i> г. Минск, ул. Ваша
-              улица, д. 22
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="contacts-row">
-              <a href="mailto:info@sitename.com"><i class="contacts-icons contacts-email"></i>
-                info@sitename.com</a>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="contacts-row">
-              <i class="contacts-icons contacts-regime"></i> пн-пт 8:00 – 19:00,
-              сб 9:00 – 14:00
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div id="contacts" class="section">
+		<div class="container">
+			<div class="section-title">
+				<div class="heading-image"><i class="contact-ico"></i></div>
+				<h2 class="heading"><span>Контактная</span> информация</h2>
+			</div>
+			<div class="contacts-cart-inner">
+				<div class="contacts-cart row">
+					<div class="col-md-5">
+						<div class="margin-row">
+							<a href="tel:89876543210"><i class="contacts-icons contacts-phone"></i> +7 (987)
+								654-32-10</a>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="margin-row">
+							<i class="contacts-icons contacts-address"></i> г. Минск, ул. Ваша
+							улица, д. 22
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="contacts-row">
+							<a href="mailto:info@sitename.com"><i class="contacts-icons contacts-email"></i>
+								info@sitename.com</a>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="contacts-row">
+							<i class="contacts-icons contacts-regime"></i> пн-пт 8:00 – 19:00,
+							сб 9:00 – 14:00
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="map-wrapper">
 		<script src="http://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU" type="text/javascript"></script>
@@ -613,17 +616,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div class="box-modal" id="responseMessage">
-		<div class="box-modal_title">
-			<h2>Статус отправки формы:</h2>
-		</div>
-		<div class="box-modal_body">
-			<div class="modal-content"></div>
-			<br /><br />
-			<a href="#" class="btn btn-success fancyClose">ok</a>
 		</div>
 	</div>
 
@@ -708,8 +700,19 @@
 	</div>
 
 	<div class="photo-modal">
-		<span class="fancybox-close"></span>
-		<img class="modal-content" alt="photo">
+		<div class="photo-modal__body">
+			<div class="photo-modal__close">
+				<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+					<title>Close Circle</title>
+					<path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+						stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+					<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+						d="M320 320L192 192M192 320l128-128" />
+				</svg>
+			</div>
+			<div class="photo-modal__content">
+			</div>
+		</div>
 	</div>
 
 	<div class="smooth-scroll">

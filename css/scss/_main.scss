@@ -69,10 +69,10 @@ h3 {
     flex-direction: column;
     align-items: center;
   }
-  
+
   &-item {
     margin-bottom: 80px;
-  
+
     &:last-child {
       margin-bottom: 0px;
     }
@@ -84,6 +84,7 @@ h3 {
     color: white;
     text-align: center;
     border-radius: 40px;
+
     & h2 {
       font-size: 22px;
       margin: 0px;
@@ -97,14 +98,10 @@ h3 {
     height: 500px;
     overflow: hidden;
   }
-  
+
   & iframe {
     border: 0 !important;
   }
-}
-
-.active-menu {
-  display: block !important;
 }
 
 .slogan {
@@ -156,6 +153,7 @@ h3 {
     transform: rotate3d(0, 0, 1, 45deg);
     opacity: 0;
   }
+
   to {
     transform-origin: left bottom;
     transform: none;
@@ -172,7 +170,7 @@ h3 {
     background: url(../images/offer-bg.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
-  
+
   & .order {
     background: url(../images/order-bg.jpg) no-repeat center;
   }
@@ -183,22 +181,22 @@ h3 {
     background: url(../images/offer3-bg.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
-  
+
   & .order {
     background: url(../images/order3-bg.jpg) no-repeat center;
   }
-  
+
   & #order_2.order {
     background: url(../images/order3-2-bg.jpg) no-repeat center;
   }
 }
 
-.dvery{
+.dvery {
   & #offer {
     background: url(../images/offer4-bg.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
-  
+
   & .order {
     background: url(../images/order4-bg.jpg) no-repeat center;
   }
@@ -209,7 +207,7 @@ h3 {
     background: url(../images/offer5-bg.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
-  
+
   & .order {
     background: url(../images/order5-bg.jpg) no-repeat center;
   }

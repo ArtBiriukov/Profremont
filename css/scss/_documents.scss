@@ -1,0 +1,31 @@
+#documents {
+  background: url("../images/document-bg.jpg");
+}
+
+.document {
+  &-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  &-inner {
+    display: inline-block;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  
+    &:hover .document-overlay {
+      opacity: 1;
+      transition: opacity 0.3s linear;
+    }
+  }
+  
+  &-overlay {
+    background: url("../images/zoom.png") no-repeat center rgba(79, 104, 110, 0.42);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,503 @@
+@media (max-width: 1850px) {
+  #offer .container {
+    height: 650px;
+  }
+}
+
+@media (max-width: 1750px) {
+  #offer .container {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1600px) {
+  #offer .container {
+    height: 550px;
+  }
+}
+
+@media (max-width: 1450px) {
+  #offer .container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 1350px) {
+  #offer .container {
+    height: 450px;
+  }
+  .offer-heading h1 {
+    font-size: 30px;
+  }
+  .utp-heading,
+  .utp-subheading {
+    font-size: 18px;
+  }
+  .btn-lg,
+  .btn-group-lg > .btn {
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #offer .container {
+    height: 400px;
+  }
+  .offer-heading h1 {
+    font-size: 26px;
+  }
+  .utp-heading,
+  .utp-subheading {
+    font-size: 16px;
+  }
+  .btn-lg,
+  .btn-group-lg > .btn {
+    height: 40px;
+    font-size: 16px;
+  }
+  .utp-button {
+    margin-top: 10px;
+  }
+  .utp-heading {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  #header .phone {
+    padding-top: 11px;
+  }
+
+  .about-inner:after {
+    display: none;
+  }
+
+  .about-inner {
+    margin-bottom: 40px;
+  }
+
+  .about-wrap .col-sm-12:last-child .about-inner {
+    margin-bottom: 0;
+  }
+
+  #header .button {
+    padding-top: 10px;
+  }
+
+  #menu li {
+    margin: 0px 8px;
+  }
+
+  .benefit-title {
+    font-size: 16px;
+  }
+
+  .countdown-days,
+  .countdown-hours,
+  .countdown-minutes,
+  .countdown-seconds {
+    width: 54px;
+    height: 54px;
+    line-height: 54px;
+    font-size: 30px;
+  }
+
+  .order-form {
+    padding: 16px 20px 20px;
+  }
+  
+  .contacts-cart {
+    font-size: 18px;
+  }
+
+  //Service
+  .service-item {
+    min-width: 453px;
+  }
+
+  .service-image {
+    width: 180px;
+    overflow: hidden;
+  }
+
+  .service-text {
+    margin-left: 180px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .countdown {
+    margin-bottom: 40px;
+  }
+  .contact-row {
+    margin-bottom: 50px;
+  }
+  #map .col-md-7:last-child .contact-row {
+    margin-bottom: 0;
+  }
+
+  .offer-inner {
+    transform: translate(0, -50%);
+    right: 10px;
+    left: 10px;
+    position: absolute;
+  }
+
+  .contacts-cart {
+    padding: 40px;
+  }
+
+  .benefit-title {
+    margin-bottom: 40px;
+  }
+
+  #benefits .col-md-4:last-child .benefit-title {
+    margin-bottom: 0;
+  }
+
+  #header .slogan {
+    padding-top: 30px;
+  }
+
+  #navigation {
+    padding: 10px 0px;
+  }
+
+  #menu {
+    margin: 20px 0px 0px;
+  }
+
+  #menu li {
+    display: block;
+    margin: 0px 0px 10px;
+    text-align: left;
+  }
+
+  #menu li a {
+    font-size: 16px;
+    background-color: transparent;
+  }
+
+  .navbar-toggle {
+    border-radius: 0px;
+    padding: 14px 10px;
+  }
+
+  .navbar-order {
+    display: none;
+  }
+
+  .navbar-right {
+    margin: 0;
+  }
+
+  .navbar-header {
+    float: none;
+    height: 60px;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse,
+  .navbar-collapse.collapsing {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+    border-top: 1px solid transparent;
+  }
+
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+    margin-bottom: 20px;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .collapse.in {
+    display: block !important;
+  }
+
+  .navigation-top .navbar-brand img {
+    padding-left: 10px;
+  }
+
+  .navbar-default .navbar-nav > li > a.btn {
+    color: #fff;
+    margin: 7px 10px 0px;
+    border-radius: 50px;
+  }
+
+
+  //Service
+  .service-item {
+    min-width: 350px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .service-image {
+    width: 130px;
+  }
+
+  .service-text {
+    margin-left: 130px;
+  }
+
+  .service-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .service-text p {
+    font-size: 12px;
+  }
+
+  .btn-sm, .btn-group-sm > .btn {
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 768px){
+
+  .offer-heading {
+    max-width: 75%;
+  }
+
+  #benefits .col-md-4:last-child .benefit-title {
+    margin-bottom: 40px;
+  }
+
+  #benefits .col-md-4:last-child .col-sm-6:last-child .benefit-title {
+    margin-bottom: 0;
+  }
+
+  #documents .col-sm-4:last-child .document-inner {
+    margin-bottom: 0;
+  }
+
+  .service-item {
+    min-width: -webkit-fill-available;
+    min-width: -moz-available;
+  }
+
+  .service-image {
+    width: inherit;
+  }
+
+  .service-text {
+    margin-left: 220px;
+  }
+
+  #footer {
+    text-align: center;
+  }
+  .footer-logotype {
+    position: relative;
+  }
+  .footer-copyright-text {
+    margin: 0;
+    display: block;
+    padding-top: 20px;
+  }
+ 
+} 
+
+@media (max-width: 580px) {
+
+  .offer-heading {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .offer-utp {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px){
+
+  #header {
+    text-align: center;
+  }
+
+  #header .block {
+    width: 100% !important;
+  }
+
+  #header .phone {
+    padding-top: 0;
+  }
+
+  #header .button {
+    padding: 10px 0px 20px;
+  }
+
+  .countdown-days,
+  .countdown-hours,
+  .countdown-minutes,
+  .countdown-seconds {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    line-height: 42px;
+  }
+
+  .contacts-cart {
+    font-size: 16px;
+  }
+
+  .countdown-title {
+    font-size: 12px;
+  }
+
+  .review-inner {
+    font-size: 14px;
+  }
+
+  .offer-heading {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .offer-heading h1 {
+    font-size: 24px;
+  }
+
+  .utp-heading,
+  .utp-subheading {
+    font-size: 16px;
+  }
+
+  .btn-lg,
+  .btn-group-lg > .btn {
+    font-size: 14px;
+    height: 35px;
+  }
+
+  #offer .container {
+    height: 500px;
+  }
+
+  .employee-inner h3 {
+    font-size: 16px;
+  }
+  
+  .employee-body {
+    font-size: 14px;
+  }
+
+  .employee-user {
+    margin-bottom: 20px;
+  }
+
+  .employee-arrow {
+    margin-top: 40px;
+  }
+
+  .employee-arrow a {
+    position: relative;
+    top: auto;
+    display: block;
+    margin: 0;
+  }
+
+  // .jcarousel-control-prev {
+  //   float: left;
+  // }
+  // .jcarousel-control-next {
+  //   float: right;
+  // }
+
+  .box-modal .box-modal_title {
+    padding: 70px 5px 0px;
+  }
+
+  .box-modal .box-modal_body {
+    padding: 30px 15px 50px;
+  }
+
+  .box-modal .box-modal_close {
+    font-size: 40px;
+  }
+
+  .service-item {
+    min-width: -webkit-fill-available;
+    min-width: -moz-available;
+  }
+
+  .service-image {
+    display: none;
+  }
+
+  .services-image_mobile {
+    display: block !important;
+  }
+
+  .service-text {
+    border-radius: 10px;
+    margin-left: 0;
+    height: 246px;
+  }
+  .phone {
+    font-size: 22px;
+  }
+} 
+
+@media only screen and (min-width: 992px) {
+  ::-webkit-resizer {
+    background-image: url("");
+    background-repeat: no-repeat;
+    height: 1px;
+    width: 8px;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-button {
+    background-image: url("");
+    background-repat: no-repeat;
+    height: 0px;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #008f29;
+    border-radius: 0px;
+    webkit-border-radius: 0px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #2c2c2c;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-copyright-text {
+    margin-left: 100px;
+    padding-top: 45px;
+  }
+}

@@ -1,0 +1,94 @@
+#menu {
+  float: none;
+  text-align: center;
+
+  & li {
+    display: inline-block;
+    float: none;
+    margin: 0 11px;
+
+    & a {
+      font-size: 14px;
+      color: #d5d5d5;
+      padding: 4px 10px 3px;
+      background-color: #434d4f;
+      border-radius: 3px;
+    }
+
+    &.active a,
+    & a:hover {
+      background-color: #008f29;
+      color: #fff;
+      transition: background-color 0.1s linear, color 0.1s linear;
+    }
+  }
+}
+
+.menu-icons {
+  background-image: url("../images/menu-icons.png");
+  background-repeat: no-repeat;
+  height: 16px;
+  display: inline-block;
+  float: left;
+  margin-right: 9px;
+}
+
+.menu-window {
+  background-position: -7px -16px;
+  width: 9px;
+}
+
+#menu li.active a .menu-window,
+#menu li a:hover .menu-window {
+  background-position: -7px 0px;
+}
+
+.menu-balcony {
+  background-position: -20px -16px;
+  width: 12px;
+}
+
+#menu li.active a .menu-balcony,
+#menu li a:hover .menu-balcony {
+  background-position: -20px 0px;
+}
+
+.menu-ceiling {
+  background-position: -35px -16px;
+  width: 13px;
+}
+
+#menu li.active a .menu-ceiling,
+#menu li a:hover .menu-ceiling {
+  background-position: -35px 0px;
+}
+
+.menu-door {
+  background-position: -55px -16px;
+  width: 9px;
+}
+
+#menu li.active a .menu-door,
+#menu li a:hover .menu-door {
+  background-position: -55px 0px;
+}
+
+.menu-door2 {
+  background-position: -69px -16px;
+  width: 11px;
+}
+
+#menu li.active a .menu-door2,
+#menu li a:hover .menu-door2 {
+  background-position: -69px 0px;
+}
+
+.menu-cupboard {
+  background-position: -80px -16px;
+  width: 16px;
+}
+
+#menu li.active a .menu-cupboard,
+#menu li a:hover .menu-cupboard {
+  background-position: -80px 0px;
+}

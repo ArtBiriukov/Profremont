@@ -59,10 +59,12 @@ valid();
 modals('[href="#callback"]', '.header-modal', '.header-modal__close');
 modals('[href="#application"]', '.services-modal', '.services-modal__close');
 modals('.document-inner', '.photo-modal', '.photo-modal__close', '.photo-modal__content', '.photo-modal__spiner');
-modals('.service-image', '.services-img__modal', '.services-img__close', '.services-img__wrap', '.services-img__spiner');
+
+if (document.querySelector('.services-img__modal')) {
+  modals('.service-image', '.services-img__modal', '.services-img__close', '.services-img__wrap', '.services-img__spiner');
+};
 
 photoModals();
 workModal();
-
 topMenu();
 commentGet();

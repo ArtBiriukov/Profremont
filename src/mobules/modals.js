@@ -7,6 +7,9 @@ const modals = (selectorTriger, selectorModal, selectorClose, selectorWrap, spin
     modalSpiner = document.querySelector(spiner),
     closeBtn = document.querySelector(selectorClose);
 
+  console.log(closeBtn);
+
+
   trigerBtns.forEach(trigerBtn => {
 
     trigerBtn.addEventListener("click", (e) => {
@@ -27,6 +30,8 @@ const modals = (selectorTriger, selectorModal, selectorClose, selectorWrap, spin
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
     overlay.style.display = "none";
+
+
 
     if (wrapContent) {
       modalSpiner.style.display = "block";

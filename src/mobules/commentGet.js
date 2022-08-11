@@ -1,10 +1,9 @@
 const commentGet = () => {
-
   const commentsItem = document.querySelector('.comments-container');
 
   fetch('comments.json')
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       /*Получаем данные (комментарии)*/
       const comments = data.comments;
 
@@ -15,8 +14,8 @@ const commentGet = () => {
       let arrComments = [];
 
       /*Перебираем массив из комментариев*/
-      comments.forEach(comment => {
 
+      comments.forEach((comment) => {
         /*Если нет картинки то добавляем заглушку*/
         if (!comment.image) {
           comment.image = '../users/placeholder.png';
@@ -146,7 +145,6 @@ const commentGet = () => {
 
       /*Функция показа комментариев*/
       const showComment = () => {
-
         commentRender();
 
         /*Удаление первого элемента массива*/
@@ -158,9 +156,9 @@ const commentGet = () => {
       setInterval(showComment, 5000);
     })
 
-    .catch(err => {
+    .catch((err) => {
       commentsItem.innerHTML = `<div class="comments__loading-error"><h2>Ошибка загрузки данных! ${err}</h2></div>`;
-    })
+    });
 };
 
 export default commentGet;

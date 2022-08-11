@@ -1,18 +1,18 @@
-import scrollTop from "./mobules/scrollTop";
-import timer from "./mobules/timer";
+import scrollTop from './mobules/scrollTop';
+import timer from './mobules/timer';
 
-import SliderCarusel from "./mobules/SliderCarusel";
+import SliderCarusel from './mobules/SliderCarusel';
 
-import calc from "./mobules/calc";
-import valid from "./mobules/valid";
-import modals from "./mobules/modals";
-import photoModals from "./mobules/photoModals";
-import workModal from "./mobules/worksModal";
-import topMenu from "./mobules/topMenu";
-import commentGet from "./mobules/commentGet";
+import calc from './mobules/calc';
+import valid from './mobules/valid';
+import modals from './mobules/modals';
+import photoModals from './mobules/photoModals';
+import workModal from './mobules/worksModal';
+import topMenu from './mobules/topMenu';
+import commentGet from './mobules/commentGet';
 
-scrollTop();
-timer('30 September 2022');
+scrollTop('.smooth-scroll', '#offer');
+timer('30 September 2023');
 
 /*Slider config */
 const sliderBenefitConfig = {
@@ -26,10 +26,12 @@ const sliderBenefitConfig = {
   sliderWidthValid: true,
   interval: 4000,
 
-  responsive: [{
-    breakpoint: 576,
-    slidersToShow: 1
-  }]
+  responsive: [
+    {
+      breakpoint: 576,
+      slidersToShow: 1,
+    },
+  ],
 };
 
 const sliderServiceConfig = {
@@ -41,10 +43,12 @@ const sliderServiceConfig = {
   slidersToShow: 2,
   infinity: true,
 
-  responsive: [{
-    breakpoint: 769,
-    slidersToShow: 1
-  }]
+  responsive: [
+    {
+      breakpoint: 769,
+      slidersToShow: 1,
+    },
+  ],
 };
 
 const sliderBenefit = new SliderCarusel(sliderBenefitConfig);
@@ -62,7 +66,7 @@ modals('.document-inner', '.photo-modal', '.photo-modal__close', '.photo-modal__
 
 if (document.querySelector('.services-img__modal')) {
   modals('.service-image', '.services-img__modal', '.services-img__close', '.services-img__wrap', '.services-img__spiner');
-};
+}
 
 photoModals();
 workModal();

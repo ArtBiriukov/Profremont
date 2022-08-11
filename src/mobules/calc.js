@@ -17,7 +17,7 @@ const calc = () => {
   }
 
   //сам калькулятор
-  calc.addEventListener('change', event => {
+  calc.addEventListener('change', (event) => {
     const target = event.target;
 
     let total = '';
@@ -46,24 +46,23 @@ const calc = () => {
 
         message.style.bottom += `${hightMes - 10}px`;
 
-        setTimeout(() =>{
+        setTimeout(() => {
           message.style.bottom = '-100px';
-  
-          setTimeout(() =>{
+
+          setTimeout(() => {
             message.remove();
           }, 300);
-  
-        },3000);
-      }
+        }, 3000);
+      };
 
-      if (typeValue === '--' && target === calcSquare) { 
+      if (typeValue === '--' && target === calcSquare) {
         const messageEl = document.querySelector('.message-calc');
 
         if (!messageEl) {
           createNotification();
         }
         return;
-      } 
+      }
 
       //если поле площадь заполнена и выбран тип тогда считаем
       if (squareValue && typeValue !== '--') {
@@ -78,9 +77,8 @@ const calc = () => {
 
       //анимация цифр и вывод в итог
       const animateValue = (start, end, duration) => {
-
         let startTimestamp = null;
-        const step = timestamp => {
+        const step = (timestamp) => {
           if (!startTimestamp) startTimestamp = timestamp;
           const progress = Math.min((timestamp - startTimestamp) / duration, 1);
           calcTotal.value = Math.floor(progress * (end + start) + start);
@@ -100,7 +98,6 @@ const calc = () => {
     if (target === calcType || target === calcSquare || target === calcTypeMaterial) {
       countSum();
     }
-
   });
 };
 

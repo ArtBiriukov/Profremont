@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
   }
-  
+
   & li {
     float: left;
   }
@@ -64,5 +64,5 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: #000 url("../images/loading.gif") no-repeat 50% 50%;
+  background: #000 url('../images/loading.gif') no-repeat 50% 50%;
 }

@@ -1,4 +1,4 @@
-const rebildInputs = event => {
+const rebildInputs = (event) => {
   const target = event.target,
     regExpTextUp = /( |^)[а-яёa-z]/g,
     regExpDelSpaceForword = /^(\s*\-*)*/g,
@@ -11,7 +11,7 @@ const rebildInputs = event => {
 
   if (target.name === 'fio') {
     delSpaceForwordBack();
-    target.value = target.value.replace(regExpTextUp, x => x.toUpperCase());
+    target.value = target.value.replace(regExpTextUp, (x) => x.toUpperCase());
   }
 
   if (target.name === 'phone') {

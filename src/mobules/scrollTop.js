@@ -1,16 +1,17 @@
-const scrollTop = () => {
-  const scrollBtn = document.querySelector('.smooth-scroll');
-  const benefitsSection = document.querySelector('#benefits');
+const scrollTop = (targetBtn, targetSection) => {
+  const btn = document.querySelector(targetBtn);
+  const section = document.querySelector(targetSection);
 
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+
+      behavior: 'smooth',
     });
   };
 
   const scrolling = () => {
-    scrollBtn.addEventListener('click', event => {
+    btn.addEventListener('click', (event) => {
       const eventCount = event.detail;
       event.preventDefault();
       if (eventCount === 1) {
@@ -21,11 +22,11 @@ const scrollTop = () => {
   };
 
   window.addEventListener('scroll', () => {
-    if (benefitsSection.offsetTop < document.documentElement.scrollTop) {
-      scrollBtn.classList.add('show-btn');
+    if (section.offsetTop < document.documentElement.scrollTop) {
+      btn.classList.add('show-btn');
       scrolling();
     } else {
-      scrollBtn.classList.remove('show-btn');
+      btn.classList.remove('show-btn');
     }
   });
 };

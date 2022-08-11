@@ -1,16 +1,5 @@
 export default class SliderCarusel {
-  constructor({
-    main,
-    wrap,
-    nextBtn,
-    prevBtn,
-    position = 0,
-    slidersToShow = 3,
-    infinity = true,
-    interval = 3000,
-    responsive = [],
-    sliderWidthValid = false,
-  }) {
+  constructor({ main, wrap, nextBtn, prevBtn, position = 0, slidersToShow = 3, infinity = true, interval = 3000, responsive = [], sliderWidthValid = false }) {
     //контент
     this.main = document.querySelector(main);
     //обертка вокруг слайдов
@@ -29,13 +18,13 @@ export default class SliderCarusel {
       infinity,
       interval,
       sliderWidth: parseInt(this.main.clientWidth / this.slidersToShow),
-      maxPosition: this.slides.length - this.slidersToShow
+
+      maxPosition: this.slides.length - this.slidersToShow,
     };
     this.responsive = responsive;
   }
 
   init() {
-
     if (this.sliderWidthValid) {
       this.addClass();
       this.addStyle();
@@ -101,7 +90,9 @@ export default class SliderCarusel {
 
   responseInit() {
     const slidersToShowOnStart = this.slidersToShow;
-    const allResponse = this.responsive.map(item => item.breakpoint);
+
+    const allResponse = this.responsive.map((item) => item.breakpoint);
+
     const maxResponse = Math.max(...allResponse);
 
     const cheangStyle = () => {
@@ -113,12 +104,10 @@ export default class SliderCarusel {
       const widthWindow = document.documentElement.clientWidth;
       if (widthWindow < maxResponse) {
         for (let i = 0; i < allResponse.length; i++) {
-
           if (widthWindow < allResponse[i]) {
             this.slidersToShow = this.responsive[i].slidersToShow;
             cheangStyle();
           }
-
         }
       } else {
         this.slidersToShow = slidersToShowOnStart;

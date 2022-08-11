@@ -2,27 +2,27 @@
   height: 41px;
 
   & i {
-    background-image: url("../images/heading-icons.png");
+    background-image: url('../images/heading-icons.png');
     background-repeat: no-repeat;
     height: 41px;
     width: 41px;
     display: inline-block;
     position: relative;
-  
+
     &:after,
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       width: 73px;
       height: 1px;
       top: 21px;
     }
-  
+
     &:after {
       left: 57px;
     }
-  
+
     &:before {
       right: 57px;
     }

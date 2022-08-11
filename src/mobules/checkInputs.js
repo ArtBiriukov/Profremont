@@ -1,8 +1,7 @@
 const regExpName = /^[а-яёa-z]{2,}$/i,
   regExpPhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 
-const checkInputs = target => {
-
+const checkInputs = (target) => {
   const checkGood = () => {
     target.classList.add('success');
     target.classList.remove('error');

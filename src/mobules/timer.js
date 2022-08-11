@@ -1,5 +1,4 @@
-const timer = stopAction => {
-
+const timer = (stopAction) => {
   const timerDay = document.querySelectorAll('.count_1'),
     timerHours = document.querySelectorAll('.count_2'),
     timerMinutes = document.querySelectorAll('.count_3'),
@@ -11,7 +10,6 @@ const timer = stopAction => {
     const dateStop = new Date(stopAction).getTime(),
       dateNow = new Date().getTime(),
       timeRemaining = (dateStop - dateNow) / 1000,
-
       seconds = Math.floor(timeRemaining % 60),
       minutes = Math.floor((timeRemaining / 60) % 60),
       hours = Math.floor((timeRemaining / 3600) % 24),
@@ -23,7 +21,8 @@ const timer = stopAction => {
         days,
         hours,
         minutes,
-        seconds
+
+        seconds,
       };
     } else {
       return {
@@ -31,12 +30,13 @@ const timer = stopAction => {
         days: 0,
         hours: 0,
         minutes: 0,
-        seconds: 0
+
+        seconds: 0,
       };
     }
   };
 
-  const checkZero = itemTime => {
+  const checkZero = (itemTime) => {
     if (itemTime < 10) {
       return `0${itemTime}`;
     } else {
@@ -45,31 +45,24 @@ const timer = stopAction => {
   };
 
   const updateClock = () => {
+    const { days, hours, minutes, seconds, timeRemaining } = getTimeRemaining();
 
-    const {
-      days,
-      hours,
-      minutes,
-      seconds,
-      timeRemaining
-    } = getTimeRemaining();
-
-    timerDay.forEach(dayItme => {
+    timerDay.forEach((dayItme) => {
       const day = dayItme.querySelector('span');
       day.textContent = checkZero(days);
     });
 
-    timerHours.forEach(hourItme => {
+    timerHours.forEach((hourItme) => {
       const hour = hourItme.querySelector('span');
       hour.textContent = checkZero(hours);
     });
 
-    timerMinutes.forEach(minutItme => {
+    timerMinutes.forEach((minutItme) => {
       const minut = minutItme.querySelector('span');
       minut.textContent = checkZero(minutes);
     });
 
-    timerSeconds.forEach(secondItme => {
+    timerSeconds.forEach((secondItme) => {
       const second = secondItme.querySelector('span');
       second.textContent = checkZero(seconds);
     });
@@ -77,12 +70,10 @@ const timer = stopAction => {
     if (timeRemaining < 0) {
       clearInterval(idInterval);
     }
-
   };
 
   updateClock();
   idInterval = setInterval(updateClock, 1000);
-
 };
 
 export default timer;

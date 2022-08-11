@@ -3,7 +3,7 @@
 }
 
 #reviews {
-  background: url("../images/review-bg.png");
+  background: url('../images/review-bg.png');
 }
 
 .review-inner {
@@ -40,10 +40,10 @@
 }
 
 .review-arrow:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 67px;
-  background-image: url("../images/review-arrows.png");
+  background-image: url('../images/review-arrows.png');
   background-repeat: no-repeat;
   width: 39px;
   height: 33px;

@@ -1,5 +1,6 @@
-import checkInputs from "./checkInputs";
-import rebildInputs from "./rebildInputs";
+import checkInputs from './checkInputs';
+import rebildInputs from './rebildInputs';
+
 import maskPhone from './mask-phone';
 
 const calcTotal = document.querySelector('input[name="calc-total"]');
@@ -18,18 +19,19 @@ const valid = () => {
   `;
 
   //запрос на сервер
-  const postData = body => fetch('./server.php', {
-    method: "POST",
-    headers: {
-      'contant-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  });
+
+  const postData = (body) =>
+    fetch('./server.php', {
+      method: 'POST',
+      headers: {
+        'contant-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
 
   //отчистка input
-  const clearInputs = inputs => {
-
-    inputs.forEach(item => {
+  const clearInputs = (inputs) => {
+    inputs.forEach((item) => {
       if (item.name !== 'page' && item.name !== 'subject') {
         item.value = '';
         item.classList.remove('success');
@@ -44,7 +46,7 @@ const valid = () => {
 
     const targetBtn = targetForm.querySelector('button');
 
-    targetInputs.forEach(input => {
+    targetInputs.forEach((input) => {
       input.removeAttribute('disabled');
     });
 
@@ -72,14 +74,12 @@ const valid = () => {
 
   //ЗАГРУЗКА (СПИНЕР)
   const loadMessage = (formBody, formInputs) => {
-
     const formBtn = formBody.querySelector('button');
 
-    formInputs.forEach(input => {
+    formInputs.forEach((input) => {
       input.setAttribute('disabled', 'disabled');
     });
     formBtn.setAttribute('disabled', 'disabled');
-
 
     formBody.style.filter = 'blur(1px)';
 
@@ -159,14 +159,15 @@ const valid = () => {
   };
 
   //работа по формам
-  const workForm = formName => {
+
+  const workForm = (formName) => {
     const form = document.querySelector(`form[name="${formName}"]`),
       inputsForm = form.querySelectorAll('.form-group input');
 
     //работа с инпутами ВАЛИДАЦИЯ
-    inputsForm.forEach(input => {
 
-      input.addEventListener('input', event => {
+    inputsForm.forEach((input) => {
+      input.addEventListener('input', (event) => {
         checkInputs(event.target);
       });
 
@@ -176,7 +177,8 @@ const valid = () => {
     maskPhone('input[name="phone"]');
 
     //Отправка данных на сервер
-    form.addEventListener('submit', event => {
+
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
       const target = event.target;
 
@@ -185,8 +187,7 @@ const valid = () => {
       const checkInputs = () => {
         let result = true;
 
-        targetInput.forEach(item => {
-
+        targetInput.forEach((item) => {
           if (item.value === '') {
             item.classList.add('error');
             result = false;
@@ -197,13 +198,11 @@ const valid = () => {
             result = false;
             return;
           }
-
         });
         return result;
       };
 
       if (checkInputs()) {
-
         target.insertAdjacentElement('beforebegin', statusMessage);
 
         loadMessage(target, targetInput);
@@ -225,28 +224,34 @@ const valid = () => {
         const successResolve = () => {
           successMessage(target);
           clearInputs(targetInput);
-          setTimeout(() => { closeMessage(target, targetInput); }, 3000);
+
+          setTimeout(() => {
+            closeMessage(target, targetInput);
+          }, 3000);
         };
 
         //Если ошибка
         const errorResolve = () => {
           errorMessage(target);
           clearInputs(targetInput);
-          setTimeout(() => { closeMessage(target, targetInput); }, 3000);
+
+          setTimeout(() => {
+            closeMessage(target, targetInput);
+          }, 3000);
         };
 
         postData(body)
-          .then(response => {
+          .then((response) => {
             if (response.status !== 200) {
               throw new Error('status not 200');
             }
             successResolve();
           })
-          .catch(error => {
+
+          .catch((error) => {
             errorResolve();
             console.log(error);
           });
-
       }
     });
   };

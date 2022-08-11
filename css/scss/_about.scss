@@ -35,12 +35,12 @@
 
   &:after {
     position: absolute;
-    content: "";
+    content: '';
     width: 28px;
     height: 100px;
     top: 0px;
     right: -12px;
-    background-image: url("../images/about-arrow.png");
+    background-image: url('../images/about-arrow.png');
     background-repeat: no-repeat;
   }
 }

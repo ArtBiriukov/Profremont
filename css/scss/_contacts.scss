@@ -1,0 +1,50 @@
+#contacts {
+  background-color: #00902a;
+  color: #fff;
+}
+
+.contacts {
+  &-cart {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    font-size: 25px;
+    line-height: 30px;
+    color: #4f686e;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  
+    &-inner {
+      position: relative;
+    }
+  
+    & a {
+      text-decoration: none;
+      color: #4f686e;
+    }
+  }
+  
+  &-icons {
+    background-image: url("../images/contact-icons.png");
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  &-phone {
+    background-position: 0px 0px;
+  }
+  
+  &-address {
+    background-position: -60px 0px;
+  }
+  
+  &-email {
+    background-position: -30px 0px;
+  }
+  
+  &-regime {
+    background-position: -90px 0px;
+  }
+}

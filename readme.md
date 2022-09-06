@@ -8,7 +8,7 @@
 
 ## Демо
 
-[Ссылка на проект](https://artbiryukov.github.io/Profremont/)
+[Ссылка на проект](https://artbiriukov.github.io/Profremont/)
 
 ## Реализованные элементы на сайте с помощью JavaScript
 
